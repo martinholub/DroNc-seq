@@ -1,6 +1,6 @@
 # Drop-seq Data Analysis
 
-This repository features workflow for data analysis of DroNc-seq Data[(Habib et al., 2017)]( https://www.nature.com/articles/nmeth.4407). `dropseq_minimal.Rmd` takes you through minimal example of processing in `R`,mainly using [Seurat](http://satijalab.org/seurat/). The `dropseq.Rmd` and the associated PDF document then give full recipe of bioinformatical workflow starting from FASTQ files and going all the way to plotting in `R`.
+This repository features workflow for data analysis of DroNc-seq Data [(Habib et al., 2017)]( https://www.nature.com/articles/nmeth.4407). `dropseq_minimal.Rmd` takes you through minimal example of processing in `R`,mainly using [Seurat](http://satijalab.org/seurat/). The `dropseq.Rmd` and the associated PDF document then give full recipe of bioinformatical workflow starting from FASTQ files and going all the way to plotting in `R`.
 
 ## Getting Started
 
