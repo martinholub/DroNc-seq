@@ -20,7 +20,7 @@ Described in the PDF.
 ## Acknowledgments
 
 
-* authors of [Drop-seq Tools](http://mccarrolllab.com/dropseq/), [dropSeqPipe](https://github.com/Hoohm/dropSeqPipe) for the developed and published code. Despite its imperfections, 
+* authors of [Drop-seq Tools](http://mccarrolllab.com/dropseq/) and [dropSeqPipe](https://github.com/Hoohm/dropSeqPipe) for the developed and published code
 
 * ETH for computing resources available to students via [Euler](https://scicomp.ethz.ch/wiki/Euler). 
 
