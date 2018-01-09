@@ -1,0 +1,474 @@
+Sender: LSF System <lsfadmin@eu-c7-018-06>
+Subject: Job 55096164: <expr> in cluster <euler> Done
+
+Job <expr> was submitted from host <eu-login-08> by user <mholub> in cluster <euler> at Tue Dec 26 20:22:51 2017.
+Job was executed on host(s) <8*eu-c7-018-06>, in queue <bigmem.24h>, as user <mholub> in cluster <euler> at Tue Dec 26 20:23:14 2017.
+</cluster/home/mholub> was used as the home directory.
+</cluster/home/mholub> was used as the working directory.
+Started at Tue Dec 26 20:23:14 2017.
+Terminated at Tue Dec 26 21:19:16 2017.
+Results reported at Tue Dec 26 21:19:16 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/usr/bin/env bash
+export _JAVA_OPTIONS="-XX:ParallelGCThreads=8"
+/cluster/home/mholub/python/bin/dropSeqPipe -f /cluster/scratch/mholub \
+-c /cluster/home/mholub/local.yaml \
+-m extract-expression --rerun
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   11314.25 sec.
+    Max Memory :                                 100671 MB
+    Average Memory :                             79483.59 MB
+    Total Requested Memory :                     131072.00 MB
+    Delta Memory :                               30401.00 MB
+    Max Swap :                                   -
+    Max Processes :                              30
+    Max Threads :                                256
+    Run time :                                   3388 sec.
+    Turnaround time :                            3385 sec.
+
+The output (if any) follows:
+
+[Tue Dec 26 20:23:17 2017] Provided cores: 8
+[Tue Dec 26 20:23:17 2017] Rules claiming more threads will be scaled down.
+[Tue Dec 26 20:23:17 2017] Job counts:
+	count	jobs
+	1	all
+	10	extract_umi_per_gene
+	11
+[Tue Dec 26 20:23:17 2017] 
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: 0_1b_S2_final.bam
+    output: logs/0_1b_S2_umi_per_gene.tsv
+    jobid: 7
+    wildcards: sample=0_1b_S2
+[Tue Dec 26 20:23:17 2017] 
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=0_1b_S2_final.bam		O=logs/0_1b_S2_umi_per_gene.tsv		CELL_BC_FILE=summary/0_1b_S2_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: PFC1_S2_final.bam
+    output: logs/PFC1_S2_umi_per_gene.tsv
+    jobid: 3
+    wildcards: sample=PFC1_S2
+[Tue Dec 26 20:23:17 2017] 
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=PFC1_S2_final.bam		O=logs/PFC1_S2_umi_per_gene.tsv		CELL_BC_FILE=summary/PFC1_S2_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: 0_1a_S1_final.bam
+    output: logs/0_1a_S1_umi_per_gene.tsv
+    jobid: 10
+    wildcards: sample=0_1a_S1
+[Tue Dec 26 20:23:17 2017] 
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=0_1a_S1_final.bam		O=logs/0_1a_S1_umi_per_gene.tsv		CELL_BC_FILE=summary/0_1a_S1_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: mHP2_S1_final.bam
+    output: logs/mHP2_S1_umi_per_gene.tsv
+    jobid: 1
+    wildcards: sample=mHP2_S1
+[Tue Dec 26 20:23:17 2017] 
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=mHP2_S1_final.bam		O=logs/mHP2_S1_umi_per_gene.tsv		CELL_BC_FILE=summary/mHP2_S1_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: HP1_S1_final.bam
+    output: logs/HP1_S1_umi_per_gene.tsv
+    jobid: 4
+    wildcards: sample=HP1_S1
+[Tue Dec 26 20:23:17 2017] 
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=HP1_S1_final.bam		O=logs/HP1_S1_umi_per_gene.tsv		CELL_BC_FILE=summary/HP1_S1_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: 0_2a_S1_final.bam
+    output: logs/0_2a_S1_umi_per_gene.tsv
+    jobid: 5
+    wildcards: sample=0_2a_S1
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:23:17 2017] 
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=0_2a_S1_final.bam		O=logs/0_2a_S1_umi_per_gene.tsv		CELL_BC_FILE=summary/0_2a_S1_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: HP3_S1_final.bam
+    output: logs/HP3_S1_umi_per_gene.tsv
+    jobid: 9
+    wildcards: sample=HP3_S1
+[Tue Dec 26 20:23:17 2017] 
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=HP3_S1_final.bam		O=logs/HP3_S1_umi_per_gene.tsv		CELL_BC_FILE=summary/HP3_S1_barcodes.csv
+[Tue Dec 26 20:23:17 2017] rule extract_umi_per_gene:
+    input: PFC3_S2_final.bam
+    output: logs/PFC3_S2_umi_per_gene.tsv
+    jobid: 8
+    wildcards: sample=PFC3_S2
+[Tue Dec 26 20:23:17 2017] 
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:23:17 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=PFC3_S2_final.bam		O=logs/PFC3_S2_umi_per_gene.tsv		CELL_BC_FILE=summary/PFC3_S2_barcodes.csv
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/0_1b_S2_umi_per_gene.tsv INPUT=0_1b_S2_final.bam CELL_BC_FILE=summary/0_1b_S2_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/mHP2_S1_umi_per_gene.tsv INPUT=mHP2_S1_final.bam CELL_BC_FILE=summary/mHP2_S1_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/HP3_S1_umi_per_gene.tsv INPUT=HP3_S1_final.bam CELL_BC_FILE=summary/HP3_S1_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/0_2a_S1_umi_per_gene.tsv INPUT=0_2a_S1_final.bam CELL_BC_FILE=summary/0_2a_S1_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/PFC1_S2_umi_per_gene.tsv INPUT=PFC1_S2_final.bam CELL_BC_FILE=summary/PFC1_S2_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/HP1_S1_umi_per_gene.tsv INPUT=HP1_S1_final.bam CELL_BC_FILE=summary/HP1_S1_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/PFC3_S2_umi_per_gene.tsv INPUT=PFC3_S2_final.bam CELL_BC_FILE=summary/PFC3_S2_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/0_1a_S1_umi_per_gene.tsv INPUT=0_1a_S1_final.bam CELL_BC_FILE=summary/0_1a_S1_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+[Tue Dec 26 20:23:17 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1348 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1379 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1339 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1352 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1350 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1329 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1390 cell barcodes in file
+INFO	2017-12-26 20:23:17	BarcodeListRetrieval	Found 1382 cell barcodes in file
+INFO	2017-12-26 20:24:01	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:43s.  Time for last 1,000,000:   43s.  Last read position: 11:3,308,732
+INFO	2017-12-26 20:24:03	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:46s.  Time for last 1,000,000:   45s.  Last read position: 10:127,228,221
+INFO	2017-12-26 20:24:06	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:48s.  Time for last 1,000,000:   48s.  Last read position: 10:108,253,413
+INFO	2017-12-26 20:24:09	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:51s.  Time for last 1,000,000:   51s.  Last read position: 10:108,497,891
+INFO	2017-12-26 20:24:10	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:53s.  Time for last 1,000,000:   52s.  Last read position: 10:106,800,761
+INFO	2017-12-26 20:24:12	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:54s.  Time for last 1,000,000:   54s.  Last read position: 11:52,389,323
+INFO	2017-12-26 20:24:13	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:55s.  Time for last 1,000,000:   55s.  Last read position: 10:127,225,761
+INFO	2017-12-26 20:24:31	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:01:13s.  Time for last 1,000,000:   73s.  Last read position: 10:67,256,065
+INFO	2017-12-26 20:24:46	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:28s.  Time for last 1,000,000:   44s.  Last read position: 11:94,071,649
+INFO	2017-12-26 20:24:50	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:32s.  Time for last 1,000,000:   46s.  Last read position: 11:80,249,882
+INFO	2017-12-26 20:24:56	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:38s.  Time for last 1,000,000:   49s.  Last read position: 11:67,688,892
+INFO	2017-12-26 20:25:04	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:46s.  Time for last 1,000,000:   55s.  Last read position: 11:69,364,089
+INFO	2017-12-26 20:25:05	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:47s.  Time for last 1,000,000:   51s.  Last read position: 11:80,880,261
+INFO	2017-12-26 20:25:06	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:48s.  Time for last 1,000,000:   53s.  Last read position: 12:59,068,933
+INFO	2017-12-26 20:25:07	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:49s.  Time for last 1,000,000:   56s.  Last read position: 11:62,602,960
+INFO	2017-12-26 20:25:17	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:02:00s.  Time for last 1,000,000:   46s.  Last read position: 10:95,995,568
+INFO	2017-12-26 20:25:31	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:13s.  Time for last 1,000,000:   45s.  Last read position: 12:83,659,528
+INFO	2017-12-26 20:25:36	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:19s.  Time for last 1,000,000:   46s.  Last read position: 12:59,043,475
+INFO	2017-12-26 20:25:39	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:21s.  Time for last 1,000,000:   43s.  Last read position: 11:116,022,367
+INFO	2017-12-26 20:25:46	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:28s.  Time for last 1,000,000:   40s.  Last read position: 12:111,710,649
+INFO	2017-12-26 20:25:48	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:30s.  Time for last 1,000,000:   43s.  Last read position: 11:116,850,821
+INFO	2017-12-26 20:25:52	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:35s.  Time for last 1,000,000:   45s.  Last read position: 11:109,669,293
+INFO	2017-12-26 20:25:53	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:35s.  Time for last 1,000,000:   48s.  Last read position: 12:59,071,952
+INFO	2017-12-26 20:26:04	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:02:46s.  Time for last 1,000,000:   32s.  Last read position: 13:14,316,946
+INFO	2017-12-26 20:26:08	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:02:50s.  Time for last 1,000,000:   31s.  Last read position: 12:109,568,231
+INFO	2017-12-26 20:26:23	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:03:05s.  Time for last 1,000,000:   65s.  Last read position: 11:5,990,244
+INFO	2017-12-26 20:26:25	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:08s.  Time for last 1,000,000:   46s.  Last read position: 12:102,564,906
+INFO	2017-12-26 20:26:37	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:19s.  Time for last 1,000,000:   43s.  Last read position: 12:109,561,643
+INFO	2017-12-26 20:26:50	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:32s.  Time for last 1,000,000:   64s.  Last read position: 15:3,982,131
+INFO	2017-12-26 20:26:50	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:33s.  Time for last 1,000,000:   58s.  Last read position: 12:100,205,702
+INFO	2017-12-26 20:26:57	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:03:39s.  Time for last 1,000,000:   52s.  Last read position: 14:65,981,363
+INFO	2017-12-26 20:26:59	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:03:41s.  Time for last 1,000,000:   33s.  Last read position: 13:11,558,053
+INFO	2017-12-26 20:27:00	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:42s.  Time for last 1,000,000:   71s.  Last read position: 12:102,394,169
+INFO	2017-12-26 20:27:01	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:03:43s.  Time for last 1,000,000:   53s.  Last read position: 14:26,959,463
+INFO	2017-12-26 20:27:19	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:04:01s.  Time for last 1,000,000:   42s.  Last read position: 13:81,796,919
+INFO	2017-12-26 20:27:22	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:04:05s.  Time for last 1,000,000:   31s.  Last read position: 12:112,615,500
+INFO	2017-12-26 20:27:32	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:04:14s.  Time for last 1,000,000:   32s.  Last read position: 13:8,978,528
+INFO	2017-12-26 20:27:34	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:04:17s.  Time for last 1,000,000:   71s.  Last read position: 11:54,516,676
+INFO	2017-12-26 20:27:49	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:04:31s.  Time for last 1,000,000:   52s.  Last read position: 16:4,942,217
+INFO	2017-12-26 20:27:50	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:04:32s.  Time for last 1,000,000:   60s.  Last read position: 16:94,469,155
+INFO	2017-12-26 20:27:51	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:04:34s.  Time for last 1,000,000:   52s.  Last read position: 14:37,121,026
+INFO	2017-12-26 20:27:55	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:04:37s.  Time for last 1,000,000:   53s.  Last read position: 15:76,694,857
+INFO	2017-12-26 20:28:17	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:04:59s.  Time for last 1,000,000:   57s.  Last read position: 15:12,146,208
+INFO	2017-12-26 20:28:19	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:05:01s.  Time for last 1,000,000:   44s.  Last read position: 11:77,529,294
+INFO	2017-12-26 20:28:24	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:05:06s.  Time for last 1,000,000:   61s.  Last read position: 14:27,483,289
+INFO	2017-12-26 20:28:29	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:05:12s.  Time for last 1,000,000:   57s.  Last read position: 14:34,245,286
+INFO	2017-12-26 20:28:35	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:05:17s.  Time for last 1,000,000:   46s.  Last read position: 17:28,971,050
+INFO	2017-12-26 20:28:46	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:05:28s.  Time for last 1,000,000:   50s.  Last read position: 16:84,955,121
+INFO	2017-12-26 20:28:49	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:05:31s.  Time for last 1,000,000:   57s.  Last read position: 15:76,249,798
+INFO	2017-12-26 20:28:51	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:05:34s.  Time for last 1,000,000:   61s.  Last read position: 18:90,543,127
+INFO	2017-12-26 20:29:10	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:05:53s.  Time for last 1,000,000:   53s.  Last read position: 16:21,934,327
+INFO	2017-12-26 20:29:11	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:05:53s.  Time for last 1,000,000:   51s.  Last read position: 11:98,704,735
+INFO	2017-12-26 20:29:22	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:04s.  Time for last 1,000,000:   36s.  Last read position: 17:78,378,040
+INFO	2017-12-26 20:29:24	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:06s.  Time for last 1,000,000:   49s.  Last read position: 18:68,275,969
+INFO	2017-12-26 20:29:28	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:06:10s.  Time for last 1,000,000:   58s.  Last read position: 15:75,564,773
+INFO	2017-12-26 20:29:28	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:06:11s.  Time for last 1,000,000:   64s.  Last read position: 15:57,969,954
+INFO	2017-12-26 20:29:31	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:06:13s.  Time for last 1,000,000:   39s.  Last read position: 19:5,802,437
+INFO	2017-12-26 20:29:35	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:17s.  Time for last 1,000,000:   46s.  Last read position: 16:38,090,328
+INFO	2017-12-26 20:29:52	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:06:34s.  Time for last 1,000,000:   27s.  Last read position: 19:5,801,903
+INFO	2017-12-26 20:29:54	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:06:36s.  Time for last 1,000,000:   43s.  Last read position: 11:119,078,006
+INFO	2017-12-26 20:30:02	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:44s.  Time for last 1,000,000:   51s.  Last read position: 17:35,671,861
+INFO	2017-12-26 20:30:08	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:06:50s.  Time for last 1,000,000:   46s.  Last read position: 19:5,799,667
+INFO	2017-12-26 20:30:10	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:52s.  Time for last 1,000,000:   42s.  Last read position: 16:36,889,480
+INFO	2017-12-26 20:30:15	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:57s.  Time for last 1,000,000:   46s.  Last read position: 16:29,586,984
+INFO	2017-12-26 20:30:20	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:07:02s.  Time for last 1,000,000:   27s.  Last read position: 19:10,629,702
+INFO	2017-12-26 20:30:25	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:07:07s.  Time for last 1,000,000:   49s.  Last read position: 17:35,061,943
+INFO	2017-12-26 20:30:32	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:07:14s.  Time for last 1,000,000:   23s.  Last read position: 19:5,802,219
+INFO	2017-12-26 20:30:39	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:07:21s.  Time for last 1,000,000:   68s.  Last read position: 1:133,738,036
+INFO	2017-12-26 20:30:56	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:07:39s.  Time for last 1,000,000:   62s.  Last read position: 12:59,201,488
+INFO	2017-12-26 20:30:56	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:07:39s.  Time for last 1,000,000:   54s.  Last read position: 19:3,894,203
+INFO	2017-12-26 20:30:59	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:07:41s.  Time for last 1,000,000:   48s.  Last read position: 17:34,216,127
+INFO	2017-12-26 20:31:05	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:07:47s.  Time for last 1,000,000:   33s.  Last read position: 19:32,802,668
+INFO	2017-12-26 20:31:15	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:07:57s.  Time for last 1,000,000:   59s.  Last read position: 17:29,041,997
+INFO	2017-12-26 20:31:15	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:07:57s.  Time for last 1,000,000:   50s.  Last read position: 18:65,750,427
+INFO	2017-12-26 20:31:16	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:07:59s.  Time for last 1,000,000:   56s.  Last read position: 1:132,022,923
+INFO	2017-12-26 20:31:30	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:08:12s.  Time for last 1,000,000:   51s.  Last read position: 2:102,634,754
+INFO	2017-12-26 20:31:30	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:08:12s.  Time for last 1,000,000:   33s.  Last read position: 19:5,802,124
+INFO	2017-12-26 20:31:48	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:08:30s.  Time for last 1,000,000:   49s.  Last read position: 18:63,664,108
+INFO	2017-12-26 20:31:49	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:08:32s.  Time for last 1,000,000:   34s.  Last read position: 19:5,801,860
+INFO	2017-12-26 20:31:56	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:08:38s.  Time for last 1,000,000:   39s.  Last read position: 2:36,036,453
+INFO	2017-12-26 20:31:58	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:08:40s.  Time for last 1,000,000:   53s.  Last read position: 1:133,655,854
+INFO	2017-12-26 20:31:58	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:08:41s.  Time for last 1,000,000:   62s.  Last read position: 12:100,206,165
+INFO	2017-12-26 20:32:03	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:08:45s.  Time for last 1,000,000:   48s.  Last read position: 18:38,993,526
+INFO	2017-12-26 20:32:15	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:08:57s.  Time for last 1,000,000:   44s.  Last read position: 19:46,330,634
+INFO	2017-12-26 20:32:17	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:08:59s.  Time for last 1,000,000:   46s.  Last read position: 3:30,899,309
+INFO	2017-12-26 20:32:23	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:09:06s.  Time for last 1,000,000:   35s.  Last read position: 19:5,801,855
+INFO	2017-12-26 20:32:24	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:09:07s.  Time for last 1,000,000:   34s.  Last read position: 19:5,802,308
+INFO	2017-12-26 20:32:31	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:09:13s.  Time for last 1,000,000:   32s.  Last read position: 12:109,560,314
+INFO	2017-12-26 20:32:41	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:09:23s.  Time for last 1,000,000:   42s.  Last read position: 2:32,788,832
+INFO	2017-12-26 20:32:43	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:09:25s.  Time for last 1,000,000:   47s.  Last read position: 2:156,542,423
+INFO	2017-12-26 20:32:45	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:09:27s.  Time for last 1,000,000:   42s.  Last read position: 19:5,801,795
+INFO	2017-12-26 20:32:59	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:09:41s.  Time for last 1,000,000:   27s.  Last read position: 12:109,568,149
+INFO	2017-12-26 20:33:01	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:09:43s.  Time for last 1,000,000:   37s.  Last read position: 19:5,802,307
+INFO	2017-12-26 20:33:01	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:09:43s.  Time for last 1,000,000:   36s.  Last read position: 19:8,725,504
+INFO	2017-12-26 20:33:14	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:09:56s.  Time for last 1,000,000:   57s.  Last read position: 4:68,761,630
+INFO	2017-12-26 20:33:16	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:09:58s.  Time for last 1,000,000:   61s.  Last read position: 1:151,361,252
+INFO	2017-12-26 20:33:17	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:09:59s.  Time for last 1,000,000:   31s.  Last read position: 19:5,802,265
+INFO	2017-12-26 20:33:23	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:10:05s.  Time for last 1,000,000:   39s.  Last read position: 3:88,411,815
+INFO	2017-12-26 20:33:28	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:10:10s.  Time for last 1,000,000:   46s.  Last read position: 2:150,637,834
+INFO	2017-12-26 20:33:37	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:10:20s.  Time for last 1,000,000:   36s.  Last read position: 19:5,802,628
+INFO	2017-12-26 20:33:47	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:10:29s.  Time for last 1,000,000:   48s.  Last read position: 13:24,812,850
+INFO	2017-12-26 20:33:57	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:10:39s.  Time for last 1,000,000:   40s.  Last read position: 19:29,611,595
+INFO	2017-12-26 20:34:02	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:10:44s.  Time for last 1,000,000:   34s.  Last read position: 3:58,522,529
+INFO	2017-12-26 20:34:04	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:10:46s.  Time for last 1,000,000:   63s.  Last read position: 1:74,588,582
+INFO	2017-12-26 20:34:08	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:10:50s.  Time for last 1,000,000:   51s.  Last read position: 2:48,905,260
+INFO	2017-12-26 20:34:13	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:10:55s.  Time for last 1,000,000:   58s.  Last read position: 5:76,872,537
+INFO	2017-12-26 20:34:14	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:10:57s.  Time for last 1,000,000:   51s.  Last read position: 4:94,569,514
+INFO	2017-12-26 20:34:34	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:11:17s.  Time for last 1,000,000:   57s.  Last read position: 1:64,607,185
+INFO	2017-12-26 20:34:44	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:11:26s.  Time for last 1,000,000:   39s.  Last read position: 1:183,344,378
+INFO	2017-12-26 20:34:45	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:11:27s.  Time for last 1,000,000:   43s.  Last read position: 4:25,616,022
+INFO	2017-12-26 20:34:51	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:11:34s.  Time for last 1,000,000:   37s.  Last read position: 5:31,187,652
+INFO	2017-12-26 20:34:52	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:11:35s.  Time for last 1,000,000:   65s.  Last read position: 13:89,611,537
+INFO	2017-12-26 20:34:58	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:11:41s.  Time for last 1,000,000:   61s.  Last read position: 1:92,857,527
+INFO	2017-12-26 20:34:59	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:11:41s.  Time for last 1,000,000:   51s.  Last read position: 2:155,702,128
+INFO	2017-12-26 20:35:04	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:11:47s.  Time for last 1,000,000:   51s.  Last read position: 6:108,550,935
+INFO	2017-12-26 20:35:22	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:12:04s.  Time for last 1,000,000:   47s.  Last read position: 1:178,337,006
+INFO	2017-12-26 20:35:28	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:12:10s.  Time for last 1,000,000:   42s.  Last read position: 4:148,612,398
+INFO	2017-12-26 20:35:31	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:12:13s.  Time for last 1,000,000:   46s.  Last read position: 2:90,768,348
+INFO	2017-12-26 20:35:34	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:12:16s.  Time for last 1,000,000:   42s.  Last read position: 5:144,735,916
+INFO	2017-12-26 20:35:39	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:12:21s.  Time for last 1,000,000:   39s.  Last read position: 3:45,327,856
+INFO	2017-12-26 20:35:48	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:12:30s.  Time for last 1,000,000:   49s.  Last read position: 2:17,379,796
+INFO	2017-12-26 20:35:59	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:12:41s.  Time for last 1,000,000:   54s.  Last read position: 7:128,442,424
+INFO	2017-12-26 20:36:01	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:12:44s.  Time for last 1,000,000:   69s.  Last read position: 14:31,336,969
+INFO	2017-12-26 20:36:06	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:12:49s.  Time for last 1,000,000:   44s.  Last read position: 2:77,180,508
+INFO	2017-12-26 20:36:08	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:12:50s.  Time for last 1,000,000:   37s.  Last read position: 2:158,381,518
+INFO	2017-12-26 20:36:17	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:12:59s.  Time for last 1,000,000:   48s.  Last read position: 5:116,008,644
+INFO	2017-12-26 20:36:28	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:13:10s.  Time for last 1,000,000:   53s.  Last read position: 6:149,494,572
+INFO	2017-12-26 20:36:29	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:13:11s.  Time for last 1,000,000:   50s.  Last read position: 4:18,116,617
+INFO	2017-12-26 20:36:40	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:13:22s.  Time for last 1,000,000:   52s.  Last read position: 2:110,862,885
+INFO	2017-12-26 20:36:53	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:13:35s.  Time for last 1,000,000:   53s.  Last read position: 9:48,657,183
+INFO	2017-12-26 20:36:53	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:13:35s.  Time for last 1,000,000:   46s.  Last read position: 2:157,562,474
+INFO	2017-12-26 20:36:54	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:13:37s.  Time for last 1,000,000:   46s.  Last read position: 3:79,605,710
+INFO	2017-12-26 20:37:01	UMIIterator	Processed    15,000,000 records.  Elapsed time: 00:13:43s.  Time for last 1,000,000:   59s.  Last read position: 14:78,495,007
+INFO	2017-12-26 20:37:05	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:13:47s.  Time for last 1,000,000:   48s.  Last read position: 6:85,469,691
+INFO	2017-12-26 20:37:15	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:13:57s.  Time for last 1,000,000:   46s.  Last read position: 7:126,691,171
+INFO	2017-12-26 20:37:17	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:14:00s.  Time for last 1,000,000:   48s.  Last read position: 4:136,145,267
+INFO	2017-12-26 20:37:19	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:14:01s.  Time for last 1,000,000:   38s.  Last read position: 2:158,382,655
+INFO	2017-12-26 20:37:35	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:14:17s.  Time for last 1,000,000:   41s.  Last read position: 3:65,380,019
+INFO	2017-12-26 20:37:40	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:14:22s.  Time for last 1,000,000:   45s.  Last read position: 4:21,832,248
+INFO	2017-12-26 20:37:45	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:14:28s.  Time for last 1,000,000:   40s.  Last read position: 7:45,377,433
+INFO	2017-12-26 20:37:48	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:14:31s.  Time for last 1,000,000:   55s.  Last read position: X:150,645,308
+INFO	2017-12-26 20:38:00	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:14:42s.  Time for last 1,000,000:   45s.  Last read position: 8:110,882,671
+INFO	2017-12-26 20:38:07	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:14:49s.  Time for last 1,000,000:   49s.  Last read position: 5:105,888,678
+INFO	2017-12-26 20:38:08	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:14:50s.  Time for last 1,000,000:   49s.  Last read position: 3:82,032,192
+INFO	2017-12-26 20:38:24	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:15:06s.  Time for last 1,000,000:   48s.  Last read position: 4:10,988,771
+INFO	2017-12-26 20:38:27	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:15:09s.  Time for last 1,000,000:   46s.  Last read position: 4:134,926,471
+INFO	2017-12-26 20:38:34	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:15:17s.  Time for last 1,000,000:   48s.  Last read position: 8:25,752,159
+INFO	2017-12-26 20:38:38	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:38:41	UMIIterator	Processed    16,000,000 records.  Elapsed time: 00:15:23s.  Time for last 1,000,000:   99s.  Last read position: 15:64,699,243
+INFO	2017-12-26 20:38:47	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:15:29s.  Time for last 1,000,000:   46s.  Last read position: 9:107,740,689
+INFO	2017-12-26 20:38:54	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:15:36s.  Time for last 1,000,000:   47s.  Last read position: 6:51,463,093
+INFO	2017-12-26 20:39:00	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:15:42s.  Time for last 1,000,000:   51s.  Last read position: 4:25,619,052
+INFO	2017-12-26 20:39:09	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:15:52s.  Time for last 1,000,000:   42s.  Last read position: 5:75,933,486
+INFO	2017-12-26 20:39:15	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:15:57s.  Time for last 1,000,000:   51s.  Last read position: 4:133,980,574
+INFO	2017-12-26 20:39:22	UMIIterator	Processed    22,000,000 records.  Elapsed time: 00:16:05s.  Time for last 1,000,000:   47s.  Last read position: 9:35,036,253
+INFO	2017-12-26 20:39:23	UMIIterator	Processed    17,000,000 records.  Elapsed time: 00:16:05s.  Time for last 1,000,000:   42s.  Last read position: 15:90,997,969
+[Tue Dec 26 20:39:35 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 16.30 minutes.
+Runtime.totalMemory()=4217896960
+[Tue Dec 26 20:39:36 2017] Finished job 3.
+[Tue Dec 26 20:39:36 2017] 1 of 11 steps (9%) done
+[Tue Dec 26 20:39:36 2017] 
+[Tue Dec 26 20:39:36 2017] rule extract_umi_per_gene:
+    input: mPFC2_S2_final.bam
+    output: logs/mPFC2_S2_umi_per_gene.tsv
+    jobid: 2
+    wildcards: sample=mPFC2_S2
+[Tue Dec 26 20:39:36 2017] 
+[Tue Dec 26 20:39:36 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=mPFC2_S2_final.bam		O=logs/mPFC2_S2_umi_per_gene.tsv		CELL_BC_FILE=summary/mPFC2_S2_barcodes.csv
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:39:36 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/mPFC2_S2_umi_per_gene.tsv INPUT=mPFC2_S2_final.bam CELL_BC_FILE=summary/mPFC2_S2_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:39:36 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+INFO	2017-12-26 20:39:36	BarcodeListRetrieval	Found 1322 cell barcodes in file
+INFO	2017-12-26 20:39:48	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:16:31s.  Time for last 1,000,000:   54s.  Last read position: 7:28,893,256
+INFO	2017-12-26 20:39:53	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:16:36s.  Time for last 1,000,000:   53s.  Last read position: 4:135,344,547
+INFO	2017-12-26 20:39:55	UMIIterator	Processed    22,000,000 records.  Elapsed time: 00:16:37s.  Time for last 1,000,000:   45s.  Last read position: 6:8,659,845
+INFO	2017-12-26 20:40:03	UMIIterator	Processed    23,000,000 records.  Elapsed time: 00:16:45s.  Time for last 1,000,000:   40s.  Last read position: 9:122,678,032
+INFO	2017-12-26 20:40:04	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:16:46s.  Time for last 1,000,000:   48s.  Last read position: 5:72,137,095
+INFO	2017-12-26 20:40:19	UMIIterator	Processed    18,000,000 records.  Elapsed time: 00:17:02s.  Time for last 1,000,000:   56s.  Last read position: 16:18,300,836
+INFO	2017-12-26 20:40:40	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:17:23s.  Time for last 1,000,000:   46s.  Last read position: 5:81,795,055
+INFO	2017-12-26 20:40:41	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:40:43	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:17:25s.  Time for last 1,000,000:   54s.  Last read position: 7:143,067,851
+INFO	2017-12-26 20:40:46	UMIIterator	Processed    23,000,000 records.  Elapsed time: 00:17:28s.  Time for last 1,000,000:   50s.  Last read position: 6:129,542,274
+INFO	2017-12-26 20:40:48	UMIIterator	Processed    22,000,000 records.  Elapsed time: 00:17:30s.  Time for last 1,000,000:   44s.  Last read position: 5:151,647,312
+INFO	2017-12-26 20:40:48	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:01:12s.  Time for last 1,000,000:   72s.  Last read position: 11:68,721,384
+INFO	2017-12-26 20:41:24	UMIIterator	Processed    22,000,000 records.  Elapsed time: 00:18:06s.  Time for last 1,000,000:   43s.  Last read position: 6:11,900,538
+INFO	2017-12-26 20:41:29	UMIIterator	Processed    22,000,000 records.  Elapsed time: 00:18:11s.  Time for last 1,000,000:   46s.  Last read position: 8:123,952,569
+INFO	2017-12-26 20:41:30	UMIIterator	Processed    24,000,000 records.  Elapsed time: 00:18:12s.  Time for last 1,000,000:   43s.  Last read position: 7:88,131,335
+INFO	2017-12-26 20:41:38	UMIIterator	Processed    23,000,000 records.  Elapsed time: 00:18:20s.  Time for last 1,000,000:   49s.  Last read position: 6:125,460,459
+INFO	2017-12-26 20:41:40	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:02:04s.  Time for last 1,000,000:   51s.  Last read position: 12:100,206,117
+INFO	2017-12-26 20:41:47	UMIIterator	Sorting finished.
+[Tue Dec 26 20:41:52 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 18.58 minutes.
+Runtime.totalMemory()=4244635648
+[Tue Dec 26 20:41:53 2017] Finished job 10.
+[Tue Dec 26 20:41:53 2017] 2 of 11 steps (18%) done
+[Tue Dec 26 20:41:53 2017] 
+[Tue Dec 26 20:41:53 2017] rule extract_umi_per_gene:
+    input: 0_2b_S2_final.bam
+    output: logs/0_2b_S2_umi_per_gene.tsv
+    jobid: 6
+    wildcards: sample=0_2b_S2
+[Tue Dec 26 20:41:53 2017] 
+[Tue Dec 26 20:41:53 2017] /cluster/home/mholub/Software/Drop-seq_tools-1.12/GatherMolecularBarcodeDistributionByGene		I=0_2b_S2_final.bam		O=logs/0_2b_S2_umi_per_gene.tsv		CELL_BC_FILE=summary/0_2b_S2_barcodes.csv
+INFO	2017-12-26 20:41:53	UMIIterator	Processed    19,000,000 records.  Elapsed time: 00:18:35s.  Time for last 1,000,000:   93s.  Last read position: 16:84,955,143
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+[Tue Dec 26 20:41:53 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene OUTPUT=logs/0_2b_S2_umi_per_gene.tsv INPUT=0_2b_S2_final.bam CELL_BC_FILE=summary/0_2b_S2_barcodes.csv    CELL_BARCODE_TAG=XC MOLECULAR_BARCODE_TAG=XM GENE_EXON_TAG=GE STRAND_TAG=GS EDIT_DISTANCE=1 READ_MQ=10 MIN_BC_READ_THRESHOLD=0 USE_STRAND_INFO=true RARE_UMI_FILTER_THRESHOLD=0.0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Tue Dec 26 20:41:53 CET 2017] Executing as mholub@eu-c7-018-06 on Linux 3.10.0-693.2.2.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_31-b13; Picard version: 1.12(d3aeea7_1452606774) IntelDeflater
+INFO	2017-12-26 20:41:53	BarcodeListRetrieval	Found 1379 cell barcodes in file
+INFO	2017-12-26 20:42:18	UMIIterator	Processed    25,000,000 records.  Elapsed time: 00:19:00s.  Time for last 1,000,000:   48s.  Last read position: 8:45,052,017
+INFO	2017-12-26 20:42:21	UMIIterator	Processed    23,000,000 records.  Elapsed time: 00:19:04s.  Time for last 1,000,000:   57s.  Last read position: 6:126,641,511
+INFO	2017-12-26 20:42:21	UMIIterator	Processed    23,000,000 records.  Elapsed time: 00:19:04s.  Time for last 1,000,000:   52s.  Last read position: 9:108,340,141
+INFO	2017-12-26 20:42:25	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:48s.  Time for last 1,000,000:   44s.  Last read position: 13:98,777,485
+INFO	2017-12-26 20:42:30	UMIIterator	Processed    24,000,000 records.  Elapsed time: 00:19:13s.  Time for last 1,000,000:   52s.  Last read position: 7:81,460,455
+INFO	2017-12-26 20:42:41	UMIIterator	Processed    20,000,000 records.  Elapsed time: 00:19:23s.  Time for last 1,000,000:   48s.  Last read position: 17:24,721,297
+INFO	2017-12-26 20:42:45	UMIIterator	Processed     1,000,000 records.  Elapsed time: 00:00:51s.  Time for last 1,000,000:   51s.  Last read position: 11:104,330,239
+[Tue Dec 26 20:43:00 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 19.72 minutes.
+Runtime.totalMemory()=4249878528
+[Tue Dec 26 20:43:01 2017] Finished job 7.
+[Tue Dec 26 20:43:01 2017] 3 of 11 steps (27%) done
+INFO	2017-12-26 20:43:06	UMIIterator	Processed    26,000,000 records.  Elapsed time: 00:19:48s.  Time for last 1,000,000:   47s.  Last read position: 9:22,014,077
+INFO	2017-12-26 20:43:11	UMIIterator	Processed    24,000,000 records.  Elapsed time: 00:19:53s.  Time for last 1,000,000:   49s.  Last read position: 7:80,474,096
+INFO	2017-12-26 20:43:13	UMIIterator	Processed    24,000,000 records.  Elapsed time: 00:19:55s.  Time for last 1,000,000:   51s.  Last read position: Y:1,261,680
+INFO	2017-12-26 20:43:15	UMIIterator	Processed    21,000,000 records.  Elapsed time: 00:19:58s.  Time for last 1,000,000:   34s.  Last read position: 17:45,569,119
+INFO	2017-12-26 20:43:17	UMIIterator	Processed    25,000,000 records.  Elapsed time: 00:20:00s.  Time for last 1,000,000:   47s.  Last read position: 8:40,549,697
+INFO	2017-12-26 20:43:26	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:50s.  Time for last 1,000,000:   61s.  Last read position: 16:16,312,268
+INFO	2017-12-26 20:43:37	UMIIterator	Processed     2,000,000 records.  Elapsed time: 00:01:43s.  Time for last 1,000,000:   52s.  Last read position: 13:81,751,904
+INFO	2017-12-26 20:43:53	UMIIterator	Processed    27,000,000 records.  Elapsed time: 00:20:35s.  Time for last 1,000,000:   46s.  Last read position: 9:108,572,629
+INFO	2017-12-26 20:44:04	UMIIterator	Processed    25,000,000 records.  Elapsed time: 00:20:46s.  Time for last 1,000,000:   53s.  Last read position: 8:27,054,538
+INFO	2017-12-26 20:44:06	UMIIterator	Processed    26,000,000 records.  Elapsed time: 00:20:49s.  Time for last 1,000,000:   48s.  Last read position: 9:21,405,009
+INFO	2017-12-26 20:44:23	UMIIterator	Processed    22,000,000 records.  Elapsed time: 00:21:05s.  Time for last 1,000,000:   67s.  Last read position: 18:6,936,671
+INFO	2017-12-26 20:44:27	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:04:50s.  Time for last 1,000,000:   60s.  Last read position: 18:31,438,383
+INFO	2017-12-26 20:44:37	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:44:43	UMIIterator	Processed    28,000,000 records.  Elapsed time: 00:21:25s.  Time for last 1,000,000:   50s.  Last read position: X:151,633,700
+INFO	2017-12-26 20:44:47	UMIIterator	Processed     3,000,000 records.  Elapsed time: 00:02:53s.  Time for last 1,000,000:   69s.  Last read position: 16:94,385,341
+INFO	2017-12-26 20:44:50	UMIIterator	Processed    26,000,000 records.  Elapsed time: 00:21:33s.  Time for last 1,000,000:   46s.  Last read position: 9:13,809,965
+INFO	2017-12-26 20:44:52	UMIIterator	Processed    27,000,000 records.  Elapsed time: 00:21:34s.  Time for last 1,000,000:   45s.  Last read position: 9:107,787,368
+INFO	2017-12-26 20:45:07	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:05:31s.  Time for last 1,000,000:   40s.  Last read position: 19:5,802,303
+INFO	2017-12-26 20:45:21	UMIIterator	Processed    23,000,000 records.  Elapsed time: 00:22:03s.  Time for last 1,000,000:   57s.  Last read position: 18:62,980,496
+INFO	2017-12-26 20:45:33	UMIIterator	Processed     4,000,000 records.  Elapsed time: 00:03:39s.  Time for last 1,000,000:   45s.  Last read position: 19:5,801,825
+INFO	2017-12-26 20:45:36	UMIIterator	Processed    27,000,000 records.  Elapsed time: 00:22:18s.  Time for last 1,000,000:   45s.  Last read position: 9:105,077,323
+INFO	2017-12-26 20:45:40	UMIIterator	Processed    28,000,000 records.  Elapsed time: 00:22:22s.  Time for last 1,000,000:   48s.  Last read position: X:136,837,645
+[Tue Dec 26 20:45:55 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 22.63 minutes.
+Runtime.totalMemory()=4259315712
+[Tue Dec 26 20:45:55 2017] Finished job 8.
+[Tue Dec 26 20:45:55 2017] 4 of 11 steps (36%) done
+INFO	2017-12-26 20:46:00	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:06:24s.  Time for last 1,000,000:   53s.  Last read position: 1:109,994,049
+INFO	2017-12-26 20:46:06	UMIIterator	Processed    24,000,000 records.  Elapsed time: 00:22:48s.  Time for last 1,000,000:   44s.  Last read position: 19:5,799,070
+INFO	2017-12-26 20:46:16	UMIIterator	Processed     5,000,000 records.  Elapsed time: 00:04:22s.  Time for last 1,000,000:   43s.  Last read position: 1:131,286,650
+INFO	2017-12-26 20:46:24	UMIIterator	Processed    28,000,000 records.  Elapsed time: 00:23:06s.  Time for last 1,000,000:   47s.  Last read position: X:134,086,553
+INFO	2017-12-26 20:46:29	UMIIterator	Processed    25,000,000 records.  Elapsed time: 00:23:11s.  Time for last 1,000,000:   23s.  Last read position: 19:5,801,774
+INFO	2017-12-26 20:46:31	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:46:46	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:46:57	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:07:21s.  Time for last 1,000,000:   57s.  Last read position: 2:118,475,940
+INFO	2017-12-26 20:46:58	UMIIterator	Processed    26,000,000 records.  Elapsed time: 00:23:41s.  Time for last 1,000,000:   29s.  Last read position: 19:5,802,062
+INFO	2017-12-26 20:47:03	UMIIterator	Processed     6,000,000 records.  Elapsed time: 00:05:09s.  Time for last 1,000,000:   47s.  Last read position: 2:158,384,346
+INFO	2017-12-26 20:47:24	UMIIterator	Processed    27,000,000 records.  Elapsed time: 00:24:06s.  Time for last 1,000,000:   25s.  Last read position: 19:5,802,240
+INFO	2017-12-26 20:47:43	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:08:06s.  Time for last 1,000,000:   45s.  Last read position: 3:80,688,310
+INFO	2017-12-26 20:47:52	UMIIterator	Processed    28,000,000 records.  Elapsed time: 00:24:34s.  Time for last 1,000,000:   28s.  Last read position: 19:5,802,394
+[Tue Dec 26 20:47:53 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 24.60 minutes.
+Runtime.totalMemory()=4264558592
+[Tue Dec 26 20:47:53 2017] Finished job 9.
+[Tue Dec 26 20:47:53 2017] 5 of 11 steps (45%) done
+INFO	2017-12-26 20:47:55	UMIIterator	Processed     7,000,000 records.  Elapsed time: 00:06:01s.  Time for last 1,000,000:   51s.  Last read position: 4:126,743,799
+[Tue Dec 26 20:48:04 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 24.78 minutes.
+Runtime.totalMemory()=4261937152
+[Tue Dec 26 20:48:05 2017] Finished job 4.
+[Tue Dec 26 20:48:05 2017] 6 of 11 steps (55%) done
+INFO	2017-12-26 20:48:17	UMIIterator	Processed    29,000,000 records.  Elapsed time: 00:24:59s.  Time for last 1,000,000:   24s.  Last read position: 19:6,993,019
+INFO	2017-12-26 20:48:27	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:48:35	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:08:59s.  Time for last 1,000,000:   52s.  Last read position: 4:134,926,379
+INFO	2017-12-26 20:48:45	UMIIterator	Processed     8,000,000 records.  Elapsed time: 00:06:51s.  Time for last 1,000,000:   50s.  Last read position: 6:85,468,200
+INFO	2017-12-26 20:49:04	UMIIterator	Processed    30,000,000 records.  Elapsed time: 00:25:46s.  Time for last 1,000,000:   47s.  Last read position: 19:53,987,541
+INFO	2017-12-26 20:49:23	UMIIterator	Processed    11,000,000 records.  Elapsed time: 00:09:46s.  Time for last 1,000,000:   47s.  Last read position: 5:144,736,262
+INFO	2017-12-26 20:49:39	UMIIterator	Processed     9,000,000 records.  Elapsed time: 00:07:45s.  Time for last 1,000,000:   53s.  Last read position: 8:83,571,700
+[Tue Dec 26 20:49:44 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 26.44 minutes.
+Runtime.totalMemory()=4254072832
+[Tue Dec 26 20:49:45 2017] Finished job 1.
+[Tue Dec 26 20:49:45 2017] 7 of 11 steps (64%) done
+INFO	2017-12-26 20:50:08	UMIIterator	Processed    31,000,000 records.  Elapsed time: 00:26:51s.  Time for last 1,000,000:   64s.  Last read position: 1:58,524,569
+INFO	2017-12-26 20:50:14	UMIIterator	Processed    12,000,000 records.  Elapsed time: 00:10:38s.  Time for last 1,000,000:   51s.  Last read position: 7:78,192,625
+INFO	2017-12-26 20:50:26	UMIIterator	Processed    10,000,000 records.  Elapsed time: 00:08:32s.  Time for last 1,000,000:   46s.  Last read position: X:167,207,206
+INFO	2017-12-26 20:51:05	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:51:05	UMIIterator	Processed    13,000,000 records.  Elapsed time: 00:11:29s.  Time for last 1,000,000:   51s.  Last read position: 9:15,314,792
+INFO	2017-12-26 20:51:14	UMIIterator	Processed    32,000,000 records.  Elapsed time: 00:27:56s.  Time for last 1,000,000:   65s.  Last read position: 1:127,795,739
+[Tue Dec 26 20:51:45 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 9.86 minutes.
+Runtime.totalMemory()=4129292288
+[Tue Dec 26 20:51:45 2017] Finished job 6.
+[Tue Dec 26 20:51:45 2017] 8 of 11 steps (73%) done
+INFO	2017-12-26 20:51:55	UMIIterator	Processed    14,000,000 records.  Elapsed time: 00:12:18s.  Time for last 1,000,000:   49s.  Last read position: X:135,844,682
+INFO	2017-12-26 20:51:59	UMIIterator	Processed    33,000,000 records.  Elapsed time: 00:28:41s.  Time for last 1,000,000:   44s.  Last read position: 1:169,694,436
+INFO	2017-12-26 20:52:43	UMIIterator	Sorting finished.
+INFO	2017-12-26 20:52:45	UMIIterator	Processed    34,000,000 records.  Elapsed time: 00:29:27s.  Time for last 1,000,000:   46s.  Last read position: 2:16,729,369
+INFO	2017-12-26 20:53:13	UMIIterator	Processed    35,000,000 records.  Elapsed time: 00:29:55s.  Time for last 1,000,000:   27s.  Last read position: 2:35,178,668
+[Tue Dec 26 20:53:29 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 13.88 minutes.
+Runtime.totalMemory()=4216324096
+[Tue Dec 26 20:53:30 2017] Finished job 2.
+[Tue Dec 26 20:53:30 2017] 9 of 11 steps (82%) done
+INFO	2017-12-26 20:54:04	UMIIterator	Processed    36,000,000 records.  Elapsed time: 00:30:46s.  Time for last 1,000,000:   50s.  Last read position: 2:90,904,063
+INFO	2017-12-26 20:54:46	UMIIterator	Processed    37,000,000 records.  Elapsed time: 00:31:28s.  Time for last 1,000,000:   42s.  Last read position: 2:130,276,149
+INFO	2017-12-26 20:55:25	UMIIterator	Processed    38,000,000 records.  Elapsed time: 00:32:07s.  Time for last 1,000,000:   39s.  Last read position: 2:158,378,769
+INFO	2017-12-26 20:55:41	UMIIterator	Processed    39,000,000 records.  Elapsed time: 00:32:24s.  Time for last 1,000,000:   16s.  Last read position: 2:158,386,070
+INFO	2017-12-26 20:56:29	UMIIterator	Processed    40,000,000 records.  Elapsed time: 00:33:11s.  Time for last 1,000,000:   47s.  Last read position: 3:33,807,746
+INFO	2017-12-26 20:57:09	UMIIterator	Processed    41,000,000 records.  Elapsed time: 00:33:51s.  Time for last 1,000,000:   39s.  Last read position: 3:88,410,495
+INFO	2017-12-26 20:57:49	UMIIterator	Processed    42,000,000 records.  Elapsed time: 00:34:31s.  Time for last 1,000,000:   40s.  Last read position: 3:122,563,937
+INFO	2017-12-26 20:58:35	UMIIterator	Processed    43,000,000 records.  Elapsed time: 00:35:17s.  Time for last 1,000,000:   45s.  Last read position: 4:21,876,281
+INFO	2017-12-26 20:59:44	UMIIterator	Processed    44,000,000 records.  Elapsed time: 00:36:27s.  Time for last 1,000,000:   69s.  Last read position: 4:96,013,196
+INFO	2017-12-26 21:00:23	UMIIterator	Processed    45,000,000 records.  Elapsed time: 00:37:05s.  Time for last 1,000,000:   38s.  Last read position: 4:130,780,114
+INFO	2017-12-26 21:00:55	UMIIterator	Processed    46,000,000 records.  Elapsed time: 00:37:37s.  Time for last 1,000,000:   32s.  Last read position: 4:152,057,827
+INFO	2017-12-26 21:01:36	UMIIterator	Processed    47,000,000 records.  Elapsed time: 00:38:18s.  Time for last 1,000,000:   40s.  Last read position: 5:34,211,812
+INFO	2017-12-26 21:02:44	UMIIterator	Processed    48,000,000 records.  Elapsed time: 00:39:26s.  Time for last 1,000,000:   67s.  Last read position: 5:104,517,773
+INFO	2017-12-26 21:03:15	UMIIterator	Processed    49,000,000 records.  Elapsed time: 00:39:57s.  Time for last 1,000,000:   31s.  Last read position: 5:124,370,037
+INFO	2017-12-26 21:03:55	UMIIterator	Processed    50,000,000 records.  Elapsed time: 00:40:38s.  Time for last 1,000,000:   40s.  Last read position: 6:8,508,512
+INFO	2017-12-26 21:04:52	UMIIterator	Processed    51,000,000 records.  Elapsed time: 00:41:35s.  Time for last 1,000,000:   57s.  Last read position: 6:72,432,913
+INFO	2017-12-26 21:05:43	UMIIterator	Processed    52,000,000 records.  Elapsed time: 00:42:26s.  Time for last 1,000,000:   50s.  Last read position: 6:124,397,105
+INFO	2017-12-26 21:06:20	UMIIterator	Processed    53,000,000 records.  Elapsed time: 00:43:02s.  Time for last 1,000,000:   36s.  Last read position: 7:19,246,445
+INFO	2017-12-26 21:06:54	UMIIterator	Processed    54,000,000 records.  Elapsed time: 00:43:36s.  Time for last 1,000,000:   33s.  Last read position: 7:55,930,347
+INFO	2017-12-26 21:08:02	UMIIterator	Processed    55,000,000 records.  Elapsed time: 00:44:44s.  Time for last 1,000,000:   68s.  Last read position: 7:112,347,745
+INFO	2017-12-26 21:08:33	UMIIterator	Processed    56,000,000 records.  Elapsed time: 00:45:15s.  Time for last 1,000,000:   30s.  Last read position: 7:143,070,815
+INFO	2017-12-26 21:09:34	UMIIterator	Processed    57,000,000 records.  Elapsed time: 00:46:16s.  Time for last 1,000,000:   61s.  Last read position: 8:68,825,111
+INFO	2017-12-26 21:10:11	UMIIterator	Processed    58,000,000 records.  Elapsed time: 00:46:53s.  Time for last 1,000,000:   36s.  Last read position: 8:105,271,608
+INFO	2017-12-26 21:10:52	UMIIterator	Processed    59,000,000 records.  Elapsed time: 00:47:35s.  Time for last 1,000,000:   41s.  Last read position: 9:22,448,541
+INFO	2017-12-26 21:11:42	UMIIterator	Processed    60,000,000 records.  Elapsed time: 00:48:24s.  Time for last 1,000,000:   49s.  Last read position: 9:60,587,395
+INFO	2017-12-26 21:12:26	UMIIterator	Processed    61,000,000 records.  Elapsed time: 00:49:08s.  Time for last 1,000,000:   44s.  Last read position: 9:106,880,798
+INFO	2017-12-26 21:13:00	UMIIterator	Processed    62,000,000 records.  Elapsed time: 00:49:42s.  Time for last 1,000,000:   33s.  Last read position: X:7,710,193
+INFO	2017-12-26 21:13:52	UMIIterator	Processed    63,000,000 records.  Elapsed time: 00:50:34s.  Time for last 1,000,000:   51s.  Last read position: X:102,307,623
+INFO	2017-12-26 21:16:41	UMIIterator	Sorting finished.
+[Tue Dec 26 21:19:13 CET 2017] org.broadinstitute.dropseqrna.barnyard.GatherMolecularBarcodeDistributionByGene done. Elapsed time: 55.94 minutes.
+Runtime.totalMemory()=4290248704
+[Tue Dec 26 21:19:14 2017] Finished job 5.
+[Tue Dec 26 21:19:14 2017] 10 of 11 steps (91%) done
+[Tue Dec 26 21:19:14 2017] 
+[Tue Dec 26 21:19:14 2017] localrule all:
+    input: summary/0_2a_S1_expression_matrix.txt, summary/0_1b_S2_expression_matrix.txt, summary/0_2b_S2_expression_matrix.txt, summary/0_1a_S1_expression_matrix.txt, summary/mPFC2_S2_expression_matrix.txt, summary/PFC1_S2_expression_matrix.txt, summary/PFC3_S2_expression_matrix.txt, summary/HP3_S1_expression_matrix.txt, summary/HP1_S1_expression_matrix.txt, summary/mHP2_S1_expression_matrix.txt, logs/0_2a_S1_umi_per_gene.tsv, logs/0_1b_S2_umi_per_gene.tsv, logs/0_2b_S2_umi_per_gene.tsv, logs/0_1a_S1_umi_per_gene.tsv, logs/mPFC2_S2_umi_per_gene.tsv, logs/PFC1_S2_umi_per_gene.tsv, logs/PFC3_S2_umi_per_gene.tsv, logs/HP3_S1_umi_per_gene.tsv, logs/HP1_S1_umi_per_gene.tsv, logs/mHP2_S1_umi_per_gene.tsv
+    jobid: 0
+[Tue Dec 26 21:19:14 2017] 
+[Tue Dec 26 21:19:14 2017] Finished job 0.
+[Tue Dec 26 21:19:14 2017] 11 of 11 steps (100%) done
+Extracting expression
+Pipeline finished

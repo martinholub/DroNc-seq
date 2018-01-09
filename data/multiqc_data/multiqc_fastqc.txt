@@ -1,0 +1,21 @@
+Sample	Filename	File type	Encoding	Total Sequences	Sequences flagged as poor quality	Sequence length	%GC	total_deduplicated_percentage	avg_sequence_length	basic_statistics	per_base_sequence_quality	per_tile_sequence_quality	per_sequence_quality_scores	per_base_sequence_content	per_sequence_gc_content	per_base_n_content	sequence_length_distribution	sequence_duplication_levels	overrepresented_sequences	adapter_content	kmer_content
+0_1a_S1_R1	0_1a_S1_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	124373902.0	0.0	20.0	52.0	11.125697262959209	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+0_1a_S1_R2	0_1a_S1_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	124373902.0	0.0	60.0	41.0	74.97455342187331	60.0	pass	pass	pass	pass	fail	pass	pass	pass	pass	warn	pass	fail
+0_1b_S2_R1	0_1b_S2_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	135040077.0	0.0	20.0	53.0	9.384367805174557	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+0_1b_S2_R2	0_1b_S2_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	135040077.0	0.0	60.0	41.0	72.98942571998947	60.0	pass	pass	pass	pass	fail	pass	pass	pass	pass	warn	pass	fail
+0_2a_S1_R1	0_2a_S1_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	468461809.0	0.0	20.0	53.0	8.113670420080663	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+0_2a_S1_R2	0_2a_S1_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	468461809.0	0.0	60.0	42.0	79.89881369341511	60.0	pass	warn	warn	pass	fail	pass	pass	pass	pass	warn	pass	fail
+0_2b_S2_R1	0_2b_S2_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	72315070.0	0.0	20.0	53.0	19.015783981183375	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+0_2b_S2_R2	0_2b_S2_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	72315070.0	0.0	60.0	40.0	97.5344435086342	60.0	pass	warn	warn	warn	fail	pass	pass	pass	pass	warn	pass	fail
+HP1_S1_R1	HP1_S1_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	183955580.0	0.0	20.0	51.0	8.188574765201043	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+HP1_S1_R2	HP1_S1_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	183955580.0	0.0	54.0	41.0	86.05653576580605	54.0	pass	pass	warn	pass	fail	pass	pass	pass	pass	warn	pass	fail
+HP3_S1_R1	HP3_S1_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	180171050.0	0.0	20.0	51.0	8.603201313261726	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+HP3_S1_R2	HP3_S1_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	180171050.0	0.0	60.0	41.0	66.19548443540137	60.0	pass	pass	pass	pass	fail	pass	pass	pass	warn	warn	pass	fail
+PFC1_S2_R1	PFC1_S2_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	120840155.0	0.0	20.0	51.0	15.768794526862735	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+PFC1_S2_R2	PFC1_S2_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	120840155.0	0.0	54.0	41.0	80.19518845183367	54.0	pass	pass	warn	pass	fail	pass	pass	pass	pass	warn	pass	fail
+PFC3_S2_R1	PFC3_S2_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	159896675.0	0.0	20.0	51.0	10.543447045563711	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+PFC3_S2_R2	PFC3_S2_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	159896675.0	0.0	60.0	41.0	69.29385168902387	60.0	pass	pass	pass	pass	fail	pass	pass	pass	warn	warn	pass	fail
+mHP2_S1_R1	mHP2_S1_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	195100563.0	0.0	20.0	51.0	7.308705068320262	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+mHP2_S1_R2	mHP2_S1_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	195100563.0	0.0	60.0	41.0	63.20740776048308	60.0	pass	warn	warn	pass	fail	pass	pass	pass	warn	warn	pass	fail
+mPFC2_S2_R1	mPFC2_S2_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	108062476.0	0.0	20.0	51.0	16.784439431618576	20.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	warn	fail
+mPFC2_S2_R2	mPFC2_S2_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	108062476.0	0.0	60.0	41.0	62.22888425360118	60.0	pass	pass	warn	pass	fail	pass	pass	pass	warn	warn	pass	fail

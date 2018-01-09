@@ -1,0 +1,616 @@
+Sender: LSF System <lsfadmin@eu-c7-027-13>
+Subject: Job 55186468: <fastqc> in cluster <euler> Exited
+
+Job <fastqc> was submitted from host <eu-login-07> by user <mholub> in cluster <euler> at Sat Dec 30 10:55:55 2017.
+Job was executed on host(s) <8*eu-c7-027-13>, in queue <bigmem.24h>, as user <mholub> in cluster <euler> at Sat Dec 30 10:56:19 2017.
+</cluster/home/mholub> was used as the home directory.
+</cluster/home/mholub> was used as the working directory.
+Started at Sat Dec 30 10:56:19 2017.
+Terminated at Sat Dec 30 20:52:58 2017.
+Results reported at Sat Dec 30 20:52:58 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/usr/bin/env bash
+export _JAVA_OPTIONS="-XX:ParallelGCThreads=8"
+/cluster/home/mholub/python/bin/dropSeqPipe -f /cluster/scratch/mholub \
+-c /cluster/home/mholub/local.yaml \
+-m fastqc --rerun
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   31794.90 sec.
+    Max Memory :                                 103708 MB
+    Average Memory :                             56792.93 MB
+    Total Requested Memory :                     131072.00 MB
+    Delta Memory :                               27364.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                50
+    Run time :                                   35827 sec.
+    Turnaround time :                            35823 sec.
+
+The output (if any) follows:
+
+[Sat Dec 30 10:56:23 2017] Provided cores: 8
+[Sat Dec 30 10:56:23 2017] Rules claiming more threads will be scaled down.
+[Sat Dec 30 10:56:23 2017] Job counts:
+	count	jobs
+	1	all
+	10	fastqc
+	11
+[Sat Dec 30 10:56:23 2017] 
+[Sat Dec 30 10:56:23 2017] rule fastqc:
+    input: 0_2a_S1_R1.fastq.gz, 0_2a_S1_R2.fastq.gz
+    output: logs/0_2a_S1_R1_fastqc.html
+    jobid: 1
+    wildcards: sample=0_2a_S1
+    threads: 8
+[Sat Dec 30 10:56:23 2017] 
+[Sat Dec 30 10:56:23 2017] /cluster/home/mholub/Software/FastQC/fastqc 0_2a_S1_R1.fastq.gz 0_2a_S1_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of 0_2a_S1_R1.fastq.gz
+Started analysis of 0_2a_S1_R2.fastq.gz
+Approx 5% complete for 0_2a_S1_R1.fastq.gz
+Approx 10% complete for 0_2a_S1_R1.fastq.gz
+Approx 5% complete for 0_2a_S1_R2.fastq.gz
+Approx 15% complete for 0_2a_S1_R1.fastq.gz
+Approx 20% complete for 0_2a_S1_R1.fastq.gz
+Approx 25% complete for 0_2a_S1_R1.fastq.gz
+Approx 10% complete for 0_2a_S1_R2.fastq.gz
+Approx 30% complete for 0_2a_S1_R1.fastq.gz
+Approx 35% complete for 0_2a_S1_R1.fastq.gz
+Approx 15% complete for 0_2a_S1_R2.fastq.gz
+Approx 40% complete for 0_2a_S1_R1.fastq.gz
+Approx 45% complete for 0_2a_S1_R1.fastq.gz
+Approx 50% complete for 0_2a_S1_R1.fastq.gz
+Approx 20% complete for 0_2a_S1_R2.fastq.gz
+Approx 55% complete for 0_2a_S1_R1.fastq.gz
+Approx 60% complete for 0_2a_S1_R1.fastq.gz
+Approx 65% complete for 0_2a_S1_R1.fastq.gz
+Approx 25% complete for 0_2a_S1_R2.fastq.gz
+Approx 70% complete for 0_2a_S1_R1.fastq.gz
+Approx 75% complete for 0_2a_S1_R1.fastq.gz
+Approx 30% complete for 0_2a_S1_R2.fastq.gz
+Approx 80% complete for 0_2a_S1_R1.fastq.gz
+Approx 85% complete for 0_2a_S1_R1.fastq.gz
+Approx 90% complete for 0_2a_S1_R1.fastq.gz
+Approx 35% complete for 0_2a_S1_R2.fastq.gz
+Approx 95% complete for 0_2a_S1_R1.fastq.gz
+Analysis complete for 0_2a_S1_R1.fastq.gz
+Approx 40% complete for 0_2a_S1_R2.fastq.gz
+Approx 45% complete for 0_2a_S1_R2.fastq.gz
+Approx 50% complete for 0_2a_S1_R2.fastq.gz
+Approx 55% complete for 0_2a_S1_R2.fastq.gz
+Approx 60% complete for 0_2a_S1_R2.fastq.gz
+Approx 65% complete for 0_2a_S1_R2.fastq.gz
+Approx 70% complete for 0_2a_S1_R2.fastq.gz
+Approx 75% complete for 0_2a_S1_R2.fastq.gz
+Approx 80% complete for 0_2a_S1_R2.fastq.gz
+Approx 85% complete for 0_2a_S1_R2.fastq.gz
+Approx 90% complete for 0_2a_S1_R2.fastq.gz
+Approx 95% complete for 0_2a_S1_R2.fastq.gz
+Analysis complete for 0_2a_S1_R2.fastq.gz
+[Sat Dec 30 13:40:06 2017] Finished job 1.
+[Sat Dec 30 13:40:06 2017] 1 of 11 steps (9%) done
+[Sat Dec 30 13:40:06 2017] 
+[Sat Dec 30 13:40:06 2017] rule fastqc:
+    input: mHP2_S1_R1.fastq.gz, mHP2_S1_R2.fastq.gz
+    output: logs/mHP2_S1_R1_fastqc.html
+    jobid: 9
+    wildcards: sample=mHP2_S1
+    threads: 8
+[Sat Dec 30 13:40:06 2017] 
+[Sat Dec 30 13:40:06 2017] /cluster/home/mholub/Software/FastQC/fastqc mHP2_S1_R1.fastq.gz mHP2_S1_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of mHP2_S1_R1.fastq.gz
+Started analysis of mHP2_S1_R2.fastq.gz
+Approx 5% complete for mHP2_S1_R1.fastq.gz
+Approx 10% complete for mHP2_S1_R1.fastq.gz
+Approx 5% complete for mHP2_S1_R2.fastq.gz
+Approx 15% complete for mHP2_S1_R1.fastq.gz
+Approx 20% complete for mHP2_S1_R1.fastq.gz
+Approx 25% complete for mHP2_S1_R1.fastq.gz
+Approx 10% complete for mHP2_S1_R2.fastq.gz
+Approx 30% complete for mHP2_S1_R1.fastq.gz
+Approx 35% complete for mHP2_S1_R1.fastq.gz
+Approx 15% complete for mHP2_S1_R2.fastq.gz
+Approx 40% complete for mHP2_S1_R1.fastq.gz
+Approx 45% complete for mHP2_S1_R1.fastq.gz
+Approx 50% complete for mHP2_S1_R1.fastq.gz
+Approx 20% complete for mHP2_S1_R2.fastq.gz
+Approx 55% complete for mHP2_S1_R1.fastq.gz
+Approx 60% complete for mHP2_S1_R1.fastq.gz
+Approx 65% complete for mHP2_S1_R1.fastq.gz
+Approx 25% complete for mHP2_S1_R2.fastq.gz
+Approx 70% complete for mHP2_S1_R1.fastq.gz
+Approx 75% complete for mHP2_S1_R1.fastq.gz
+Approx 30% complete for mHP2_S1_R2.fastq.gz
+Approx 80% complete for mHP2_S1_R1.fastq.gz
+Approx 85% complete for mHP2_S1_R1.fastq.gz
+Approx 90% complete for mHP2_S1_R1.fastq.gz
+Approx 35% complete for mHP2_S1_R2.fastq.gz
+Approx 95% complete for mHP2_S1_R1.fastq.gz
+Analysis complete for mHP2_S1_R1.fastq.gz
+Approx 40% complete for mHP2_S1_R2.fastq.gz
+Approx 45% complete for mHP2_S1_R2.fastq.gz
+Approx 50% complete for mHP2_S1_R2.fastq.gz
+Approx 55% complete for mHP2_S1_R2.fastq.gz
+Approx 60% complete for mHP2_S1_R2.fastq.gz
+Approx 65% complete for mHP2_S1_R2.fastq.gz
+Approx 70% complete for mHP2_S1_R2.fastq.gz
+Approx 75% complete for mHP2_S1_R2.fastq.gz
+Approx 80% complete for mHP2_S1_R2.fastq.gz
+Approx 85% complete for mHP2_S1_R2.fastq.gz
+Approx 90% complete for mHP2_S1_R2.fastq.gz
+Approx 95% complete for mHP2_S1_R2.fastq.gz
+Analysis complete for mHP2_S1_R2.fastq.gz
+[Sat Dec 30 14:44:34 2017] Finished job 9.
+[Sat Dec 30 14:44:34 2017] 2 of 11 steps (18%) done
+[Sat Dec 30 14:44:34 2017] 
+[Sat Dec 30 14:44:34 2017] rule fastqc:
+    input: HP3_S1_R1.fastq.gz, HP3_S1_R2.fastq.gz
+    output: logs/HP3_S1_R1_fastqc.html
+    jobid: 2
+    wildcards: sample=HP3_S1
+    threads: 8
+[Sat Dec 30 14:44:34 2017] 
+[Sat Dec 30 14:44:34 2017] /cluster/home/mholub/Software/FastQC/fastqc HP3_S1_R1.fastq.gz HP3_S1_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of HP3_S1_R1.fastq.gz
+Started analysis of HP3_S1_R2.fastq.gz
+Approx 5% complete for HP3_S1_R1.fastq.gz
+Approx 10% complete for HP3_S1_R1.fastq.gz
+Approx 5% complete for HP3_S1_R2.fastq.gz
+Approx 15% complete for HP3_S1_R1.fastq.gz
+Approx 20% complete for HP3_S1_R1.fastq.gz
+Approx 25% complete for HP3_S1_R1.fastq.gz
+Approx 10% complete for HP3_S1_R2.fastq.gz
+Approx 30% complete for HP3_S1_R1.fastq.gz
+Approx 35% complete for HP3_S1_R1.fastq.gz
+Approx 15% complete for HP3_S1_R2.fastq.gz
+Approx 40% complete for HP3_S1_R1.fastq.gz
+Approx 45% complete for HP3_S1_R1.fastq.gz
+Approx 50% complete for HP3_S1_R1.fastq.gz
+Approx 20% complete for HP3_S1_R2.fastq.gz
+Approx 55% complete for HP3_S1_R1.fastq.gz
+Approx 60% complete for HP3_S1_R1.fastq.gz
+Approx 25% complete for HP3_S1_R2.fastq.gz
+Approx 65% complete for HP3_S1_R1.fastq.gz
+Approx 70% complete for HP3_S1_R1.fastq.gz
+Approx 75% complete for HP3_S1_R1.fastq.gz
+Approx 30% complete for HP3_S1_R2.fastq.gz
+Approx 80% complete for HP3_S1_R1.fastq.gz
+Approx 85% complete for HP3_S1_R1.fastq.gz
+Approx 35% complete for HP3_S1_R2.fastq.gz
+Approx 90% complete for HP3_S1_R1.fastq.gz
+Approx 95% complete for HP3_S1_R1.fastq.gz
+Analysis complete for HP3_S1_R1.fastq.gz
+Approx 40% complete for HP3_S1_R2.fastq.gz
+Approx 45% complete for HP3_S1_R2.fastq.gz
+Approx 50% complete for HP3_S1_R2.fastq.gz
+Approx 55% complete for HP3_S1_R2.fastq.gz
+Approx 60% complete for HP3_S1_R2.fastq.gz
+Approx 65% complete for HP3_S1_R2.fastq.gz
+Approx 70% complete for HP3_S1_R2.fastq.gz
+Approx 75% complete for HP3_S1_R2.fastq.gz
+Approx 80% complete for HP3_S1_R2.fastq.gz
+Approx 85% complete for HP3_S1_R2.fastq.gz
+Approx 90% complete for HP3_S1_R2.fastq.gz
+Approx 95% complete for HP3_S1_R2.fastq.gz
+Analysis complete for HP3_S1_R2.fastq.gz
+[Sat Dec 30 15:42:03 2017] Finished job 2.
+[Sat Dec 30 15:42:03 2017] 3 of 11 steps (27%) done
+[Sat Dec 30 15:42:03 2017] 
+[Sat Dec 30 15:42:03 2017] rule fastqc:
+    input: HP1_S1_R1.fastq.gz, HP1_S1_R2.fastq.gz
+    output: logs/HP1_S1_R1_fastqc.html
+    jobid: 4
+    wildcards: sample=HP1_S1
+    threads: 8
+[Sat Dec 30 15:42:03 2017] 
+[Sat Dec 30 15:42:03 2017] /cluster/home/mholub/Software/FastQC/fastqc HP1_S1_R1.fastq.gz HP1_S1_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of HP1_S1_R1.fastq.gz
+Started analysis of HP1_S1_R2.fastq.gz
+Approx 5% complete for HP1_S1_R1.fastq.gz
+Approx 10% complete for HP1_S1_R1.fastq.gz
+Approx 5% complete for HP1_S1_R2.fastq.gz
+Approx 15% complete for HP1_S1_R1.fastq.gz
+Approx 20% complete for HP1_S1_R1.fastq.gz
+Approx 10% complete for HP1_S1_R2.fastq.gz
+Approx 25% complete for HP1_S1_R1.fastq.gz
+Approx 30% complete for HP1_S1_R1.fastq.gz
+Approx 35% complete for HP1_S1_R1.fastq.gz
+Approx 15% complete for HP1_S1_R2.fastq.gz
+Approx 40% complete for HP1_S1_R1.fastq.gz
+Approx 45% complete for HP1_S1_R1.fastq.gz
+Approx 20% complete for HP1_S1_R2.fastq.gz
+Approx 50% complete for HP1_S1_R1.fastq.gz
+Approx 55% complete for HP1_S1_R1.fastq.gz
+Approx 60% complete for HP1_S1_R1.fastq.gz
+Approx 25% complete for HP1_S1_R2.fastq.gz
+Approx 65% complete for HP1_S1_R1.fastq.gz
+Approx 70% complete for HP1_S1_R1.fastq.gz
+Approx 30% complete for HP1_S1_R2.fastq.gz
+Approx 75% complete for HP1_S1_R1.fastq.gz
+Approx 80% complete for HP1_S1_R1.fastq.gz
+Approx 35% complete for HP1_S1_R2.fastq.gz
+Approx 85% complete for HP1_S1_R1.fastq.gz
+Approx 90% complete for HP1_S1_R1.fastq.gz
+Approx 95% complete for HP1_S1_R1.fastq.gz
+Approx 40% complete for HP1_S1_R2.fastq.gz
+Analysis complete for HP1_S1_R1.fastq.gz
+Approx 45% complete for HP1_S1_R2.fastq.gz
+Approx 50% complete for HP1_S1_R2.fastq.gz
+Approx 55% complete for HP1_S1_R2.fastq.gz
+Approx 60% complete for HP1_S1_R2.fastq.gz
+Approx 65% complete for HP1_S1_R2.fastq.gz
+Approx 70% complete for HP1_S1_R2.fastq.gz
+Approx 75% complete for HP1_S1_R2.fastq.gz
+Approx 80% complete for HP1_S1_R2.fastq.gz
+Approx 85% complete for HP1_S1_R2.fastq.gz
+Approx 90% complete for HP1_S1_R2.fastq.gz
+Approx 95% complete for HP1_S1_R2.fastq.gz
+Analysis complete for HP1_S1_R2.fastq.gz
+[Sat Dec 30 16:36:28 2017] Finished job 4.
+[Sat Dec 30 16:36:28 2017] 4 of 11 steps (36%) done
+[Sat Dec 30 16:36:28 2017] 
+[Sat Dec 30 16:36:28 2017] rule fastqc:
+    input: PFC3_S2_R1.fastq.gz, PFC3_S2_R2.fastq.gz
+    output: logs/PFC3_S2_R1_fastqc.html
+    jobid: 3
+    wildcards: sample=PFC3_S2
+    threads: 8
+[Sat Dec 30 16:36:28 2017] 
+[Sat Dec 30 16:36:28 2017] /cluster/home/mholub/Software/FastQC/fastqc PFC3_S2_R1.fastq.gz PFC3_S2_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of PFC3_S2_R1.fastq.gz
+Started analysis of PFC3_S2_R2.fastq.gz
+Approx 5% complete for PFC3_S2_R1.fastq.gz
+Approx 10% complete for PFC3_S2_R1.fastq.gz
+Approx 5% complete for PFC3_S2_R2.fastq.gz
+Approx 15% complete for PFC3_S2_R1.fastq.gz
+Approx 20% complete for PFC3_S2_R1.fastq.gz
+Approx 25% complete for PFC3_S2_R1.fastq.gz
+Approx 10% complete for PFC3_S2_R2.fastq.gz
+Approx 30% complete for PFC3_S2_R1.fastq.gz
+Approx 35% complete for PFC3_S2_R1.fastq.gz
+Approx 40% complete for PFC3_S2_R1.fastq.gz
+Approx 15% complete for PFC3_S2_R2.fastq.gz
+Approx 45% complete for PFC3_S2_R1.fastq.gz
+Approx 50% complete for PFC3_S2_R1.fastq.gz
+Approx 20% complete for PFC3_S2_R2.fastq.gz
+Approx 55% complete for PFC3_S2_R1.fastq.gz
+Approx 60% complete for PFC3_S2_R1.fastq.gz
+Approx 65% complete for PFC3_S2_R1.fastq.gz
+Approx 25% complete for PFC3_S2_R2.fastq.gz
+Approx 70% complete for PFC3_S2_R1.fastq.gz
+Approx 75% complete for PFC3_S2_R1.fastq.gz
+Approx 80% complete for PFC3_S2_R1.fastq.gz
+Approx 85% complete for PFC3_S2_R1.fastq.gz
+Approx 30% complete for PFC3_S2_R2.fastq.gz
+Approx 90% complete for PFC3_S2_R1.fastq.gz
+Approx 95% complete for PFC3_S2_R1.fastq.gz
+Approx 35% complete for PFC3_S2_R2.fastq.gz
+Analysis complete for PFC3_S2_R1.fastq.gz
+Approx 40% complete for PFC3_S2_R2.fastq.gz
+Approx 45% complete for PFC3_S2_R2.fastq.gz
+Approx 50% complete for PFC3_S2_R2.fastq.gz
+Approx 55% complete for PFC3_S2_R2.fastq.gz
+Approx 60% complete for PFC3_S2_R2.fastq.gz
+Approx 65% complete for PFC3_S2_R2.fastq.gz
+Approx 70% complete for PFC3_S2_R2.fastq.gz
+Approx 75% complete for PFC3_S2_R2.fastq.gz
+Approx 80% complete for PFC3_S2_R2.fastq.gz
+Approx 85% complete for PFC3_S2_R2.fastq.gz
+Approx 90% complete for PFC3_S2_R2.fastq.gz
+Approx 95% complete for PFC3_S2_R2.fastq.gz
+Analysis complete for PFC3_S2_R2.fastq.gz
+[Sat Dec 30 17:30:24 2017] Finished job 3.
+[Sat Dec 30 17:30:24 2017] 5 of 11 steps (45%) done
+[Sat Dec 30 17:30:24 2017] 
+[Sat Dec 30 17:30:24 2017] rule fastqc:
+    input: 0_1b_S2_R1.fastq.gz, 0_1b_S2_R2.fastq.gz
+    output: logs/0_1b_S2_R1_fastqc.html
+    jobid: 10
+    wildcards: sample=0_1b_S2
+    threads: 8
+[Sat Dec 30 17:30:24 2017] 
+[Sat Dec 30 17:30:24 2017] /cluster/home/mholub/Software/FastQC/fastqc 0_1b_S2_R1.fastq.gz 0_1b_S2_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of 0_1b_S2_R1.fastq.gz
+Started analysis of 0_1b_S2_R2.fastq.gz
+Approx 5% complete for 0_1b_S2_R1.fastq.gz
+Approx 10% complete for 0_1b_S2_R1.fastq.gz
+Approx 5% complete for 0_1b_S2_R2.fastq.gz
+Approx 15% complete for 0_1b_S2_R1.fastq.gz
+Approx 20% complete for 0_1b_S2_R1.fastq.gz
+Approx 25% complete for 0_1b_S2_R1.fastq.gz
+Approx 10% complete for 0_1b_S2_R2.fastq.gz
+Approx 30% complete for 0_1b_S2_R1.fastq.gz
+Approx 35% complete for 0_1b_S2_R1.fastq.gz
+Approx 15% complete for 0_1b_S2_R2.fastq.gz
+Approx 40% complete for 0_1b_S2_R1.fastq.gz
+Approx 45% complete for 0_1b_S2_R1.fastq.gz
+Approx 50% complete for 0_1b_S2_R1.fastq.gz
+Approx 20% complete for 0_1b_S2_R2.fastq.gz
+Approx 55% complete for 0_1b_S2_R1.fastq.gz
+Approx 60% complete for 0_1b_S2_R1.fastq.gz
+Approx 65% complete for 0_1b_S2_R1.fastq.gz
+Approx 25% complete for 0_1b_S2_R2.fastq.gz
+Approx 70% complete for 0_1b_S2_R1.fastq.gz
+Approx 75% complete for 0_1b_S2_R1.fastq.gz
+Approx 30% complete for 0_1b_S2_R2.fastq.gz
+Approx 80% complete for 0_1b_S2_R1.fastq.gz
+Approx 85% complete for 0_1b_S2_R1.fastq.gz
+Approx 90% complete for 0_1b_S2_R1.fastq.gz
+Approx 35% complete for 0_1b_S2_R2.fastq.gz
+Approx 95% complete for 0_1b_S2_R1.fastq.gz
+Analysis complete for 0_1b_S2_R1.fastq.gz
+Approx 40% complete for 0_1b_S2_R2.fastq.gz
+Approx 45% complete for 0_1b_S2_R2.fastq.gz
+Approx 50% complete for 0_1b_S2_R2.fastq.gz
+Approx 55% complete for 0_1b_S2_R2.fastq.gz
+Approx 60% complete for 0_1b_S2_R2.fastq.gz
+Approx 65% complete for 0_1b_S2_R2.fastq.gz
+Approx 70% complete for 0_1b_S2_R2.fastq.gz
+Approx 75% complete for 0_1b_S2_R2.fastq.gz
+Approx 80% complete for 0_1b_S2_R2.fastq.gz
+Approx 85% complete for 0_1b_S2_R2.fastq.gz
+Approx 90% complete for 0_1b_S2_R2.fastq.gz
+Approx 95% complete for 0_1b_S2_R2.fastq.gz
+Analysis complete for 0_1b_S2_R2.fastq.gz
+[Sat Dec 30 18:16:40 2017] Finished job 10.
+[Sat Dec 30 18:16:40 2017] 6 of 11 steps (55%) done
+[Sat Dec 30 18:16:40 2017] 
+[Sat Dec 30 18:16:40 2017] rule fastqc:
+    input: 0_1a_S1_R1.fastq.gz, 0_1a_S1_R2.fastq.gz
+    output: logs/0_1a_S1_R1_fastqc.html
+    jobid: 7
+    wildcards: sample=0_1a_S1
+    threads: 8
+[Sat Dec 30 18:16:40 2017] 
+[Sat Dec 30 18:16:40 2017] /cluster/home/mholub/Software/FastQC/fastqc 0_1a_S1_R1.fastq.gz 0_1a_S1_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of 0_1a_S1_R1.fastq.gz
+Started analysis of 0_1a_S1_R2.fastq.gz
+Approx 5% complete for 0_1a_S1_R1.fastq.gz
+Approx 10% complete for 0_1a_S1_R1.fastq.gz
+Approx 5% complete for 0_1a_S1_R2.fastq.gz
+Approx 15% complete for 0_1a_S1_R1.fastq.gz
+Approx 20% complete for 0_1a_S1_R1.fastq.gz
+Approx 10% complete for 0_1a_S1_R2.fastq.gz
+Approx 25% complete for 0_1a_S1_R1.fastq.gz
+Approx 30% complete for 0_1a_S1_R1.fastq.gz
+Approx 35% complete for 0_1a_S1_R1.fastq.gz
+Approx 15% complete for 0_1a_S1_R2.fastq.gz
+Approx 40% complete for 0_1a_S1_R1.fastq.gz
+Approx 45% complete for 0_1a_S1_R1.fastq.gz
+Approx 20% complete for 0_1a_S1_R2.fastq.gz
+Approx 50% complete for 0_1a_S1_R1.fastq.gz
+Approx 55% complete for 0_1a_S1_R1.fastq.gz
+Approx 60% complete for 0_1a_S1_R1.fastq.gz
+Approx 25% complete for 0_1a_S1_R2.fastq.gz
+Approx 65% complete for 0_1a_S1_R1.fastq.gz
+Approx 70% complete for 0_1a_S1_R1.fastq.gz
+Approx 30% complete for 0_1a_S1_R2.fastq.gz
+Approx 75% complete for 0_1a_S1_R1.fastq.gz
+Approx 80% complete for 0_1a_S1_R1.fastq.gz
+Approx 85% complete for 0_1a_S1_R1.fastq.gz
+Approx 35% complete for 0_1a_S1_R2.fastq.gz
+Approx 90% complete for 0_1a_S1_R1.fastq.gz
+Approx 95% complete for 0_1a_S1_R1.fastq.gz
+Analysis complete for 0_1a_S1_R1.fastq.gz
+Approx 40% complete for 0_1a_S1_R2.fastq.gz
+Approx 45% complete for 0_1a_S1_R2.fastq.gz
+Approx 50% complete for 0_1a_S1_R2.fastq.gz
+Approx 55% complete for 0_1a_S1_R2.fastq.gz
+Approx 60% complete for 0_1a_S1_R2.fastq.gz
+Approx 65% complete for 0_1a_S1_R2.fastq.gz
+Approx 70% complete for 0_1a_S1_R2.fastq.gz
+Approx 75% complete for 0_1a_S1_R2.fastq.gz
+Approx 80% complete for 0_1a_S1_R2.fastq.gz
+Approx 85% complete for 0_1a_S1_R2.fastq.gz
+Approx 90% complete for 0_1a_S1_R2.fastq.gz
+Approx 95% complete for 0_1a_S1_R2.fastq.gz
+Analysis complete for 0_1a_S1_R2.fastq.gz
+[Sat Dec 30 18:57:42 2017] Finished job 7.
+[Sat Dec 30 18:57:42 2017] 7 of 11 steps (64%) done
+[Sat Dec 30 18:57:42 2017] 
+[Sat Dec 30 18:57:42 2017] rule fastqc:
+    input: PFC1_S2_R1.fastq.gz, PFC1_S2_R2.fastq.gz
+    output: logs/PFC1_S2_R1_fastqc.html
+    jobid: 6
+    wildcards: sample=PFC1_S2
+    threads: 8
+[Sat Dec 30 18:57:42 2017] 
+[Sat Dec 30 18:57:42 2017] /cluster/home/mholub/Software/FastQC/fastqc PFC1_S2_R1.fastq.gz PFC1_S2_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of PFC1_S2_R1.fastq.gz
+Started analysis of PFC1_S2_R2.fastq.gz
+Approx 5% complete for PFC1_S2_R1.fastq.gz
+Approx 10% complete for PFC1_S2_R1.fastq.gz
+Approx 5% complete for PFC1_S2_R2.fastq.gz
+Approx 15% complete for PFC1_S2_R1.fastq.gz
+Approx 20% complete for PFC1_S2_R1.fastq.gz
+Approx 25% complete for PFC1_S2_R1.fastq.gz
+Approx 10% complete for PFC1_S2_R2.fastq.gz
+Approx 30% complete for PFC1_S2_R1.fastq.gz
+Approx 35% complete for PFC1_S2_R1.fastq.gz
+Approx 15% complete for PFC1_S2_R2.fastq.gz
+Approx 40% complete for PFC1_S2_R1.fastq.gz
+Approx 45% complete for PFC1_S2_R1.fastq.gz
+Approx 50% complete for PFC1_S2_R1.fastq.gz
+Approx 20% complete for PFC1_S2_R2.fastq.gz
+Approx 55% complete for PFC1_S2_R1.fastq.gz
+Approx 60% complete for PFC1_S2_R1.fastq.gz
+Approx 25% complete for PFC1_S2_R2.fastq.gz
+Approx 65% complete for PFC1_S2_R1.fastq.gz
+Approx 70% complete for PFC1_S2_R1.fastq.gz
+Approx 75% complete for PFC1_S2_R1.fastq.gz
+Approx 30% complete for PFC1_S2_R2.fastq.gz
+Approx 80% complete for PFC1_S2_R1.fastq.gz
+Approx 85% complete for PFC1_S2_R1.fastq.gz
+Approx 35% complete for PFC1_S2_R2.fastq.gz
+Approx 90% complete for PFC1_S2_R1.fastq.gz
+Approx 95% complete for PFC1_S2_R1.fastq.gz
+Analysis complete for PFC1_S2_R1.fastq.gz
+Approx 40% complete for PFC1_S2_R2.fastq.gz
+Approx 45% complete for PFC1_S2_R2.fastq.gz
+Approx 50% complete for PFC1_S2_R2.fastq.gz
+Approx 55% complete for PFC1_S2_R2.fastq.gz
+Approx 60% complete for PFC1_S2_R2.fastq.gz
+Approx 65% complete for PFC1_S2_R2.fastq.gz
+Approx 70% complete for PFC1_S2_R2.fastq.gz
+Approx 75% complete for PFC1_S2_R2.fastq.gz
+Approx 80% complete for PFC1_S2_R2.fastq.gz
+Approx 85% complete for PFC1_S2_R2.fastq.gz
+Approx 90% complete for PFC1_S2_R2.fastq.gz
+Approx 95% complete for PFC1_S2_R2.fastq.gz
+Analysis complete for PFC1_S2_R2.fastq.gz
+[Sat Dec 30 19:39:04 2017] Finished job 6.
+[Sat Dec 30 19:39:04 2017] 8 of 11 steps (73%) done
+[Sat Dec 30 19:39:04 2017] 
+[Sat Dec 30 19:39:04 2017] rule fastqc:
+    input: mPFC2_S2_R1.fastq.gz, mPFC2_S2_R2.fastq.gz
+    output: logs/mPFC2_S2_R1_fastqc.html
+    jobid: 8
+    wildcards: sample=mPFC2_S2
+    threads: 8
+[Sat Dec 30 19:39:04 2017] 
+[Sat Dec 30 19:39:04 2017] /cluster/home/mholub/Software/FastQC/fastqc mPFC2_S2_R1.fastq.gz mPFC2_S2_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of mPFC2_S2_R1.fastq.gz
+Started analysis of mPFC2_S2_R2.fastq.gz
+Approx 5% complete for mPFC2_S2_R1.fastq.gz
+Approx 10% complete for mPFC2_S2_R1.fastq.gz
+Approx 5% complete for mPFC2_S2_R2.fastq.gz
+Approx 15% complete for mPFC2_S2_R1.fastq.gz
+Approx 20% complete for mPFC2_S2_R1.fastq.gz
+Approx 25% complete for mPFC2_S2_R1.fastq.gz
+Approx 10% complete for mPFC2_S2_R2.fastq.gz
+Approx 30% complete for mPFC2_S2_R1.fastq.gz
+Approx 35% complete for mPFC2_S2_R1.fastq.gz
+Approx 40% complete for mPFC2_S2_R1.fastq.gz
+Approx 15% complete for mPFC2_S2_R2.fastq.gz
+Approx 45% complete for mPFC2_S2_R1.fastq.gz
+Approx 50% complete for mPFC2_S2_R1.fastq.gz
+Approx 20% complete for mPFC2_S2_R2.fastq.gz
+Approx 55% complete for mPFC2_S2_R1.fastq.gz
+Approx 60% complete for mPFC2_S2_R1.fastq.gz
+Approx 65% complete for mPFC2_S2_R1.fastq.gz
+Approx 25% complete for mPFC2_S2_R2.fastq.gz
+Approx 70% complete for mPFC2_S2_R1.fastq.gz
+Approx 75% complete for mPFC2_S2_R1.fastq.gz
+Approx 80% complete for mPFC2_S2_R1.fastq.gz
+Approx 30% complete for mPFC2_S2_R2.fastq.gz
+Approx 85% complete for mPFC2_S2_R1.fastq.gz
+Approx 90% complete for mPFC2_S2_R1.fastq.gz
+Approx 95% complete for mPFC2_S2_R1.fastq.gz
+Approx 35% complete for mPFC2_S2_R2.fastq.gz
+Analysis complete for mPFC2_S2_R1.fastq.gz
+Approx 40% complete for mPFC2_S2_R2.fastq.gz
+Approx 45% complete for mPFC2_S2_R2.fastq.gz
+Approx 50% complete for mPFC2_S2_R2.fastq.gz
+Approx 55% complete for mPFC2_S2_R2.fastq.gz
+Approx 60% complete for mPFC2_S2_R2.fastq.gz
+Approx 65% complete for mPFC2_S2_R2.fastq.gz
+Approx 70% complete for mPFC2_S2_R2.fastq.gz
+Approx 75% complete for mPFC2_S2_R2.fastq.gz
+Approx 80% complete for mPFC2_S2_R2.fastq.gz
+Approx 85% complete for mPFC2_S2_R2.fastq.gz
+Approx 90% complete for mPFC2_S2_R2.fastq.gz
+Approx 95% complete for mPFC2_S2_R2.fastq.gz
+Analysis complete for mPFC2_S2_R2.fastq.gz
+[Sat Dec 30 20:25:04 2017] Finished job 8.
+[Sat Dec 30 20:25:04 2017] 9 of 11 steps (82%) done
+[Sat Dec 30 20:25:04 2017] 
+[Sat Dec 30 20:25:04 2017] rule fastqc:
+    input: 0_2b_S2_R1.fastq.gz, 0_2b_S2_R2.fastq.gz
+    output: logs/0_2b_S2_R1_fastqc.html
+    jobid: 5
+    wildcards: sample=0_2b_S2
+    threads: 8
+[Sat Dec 30 20:25:04 2017] 
+[Sat Dec 30 20:25:04 2017] /cluster/home/mholub/Software/FastQC/fastqc 0_2b_S2_R1.fastq.gz 0_2b_S2_R2.fastq.gz -t 2 -o logs --extract
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=8
+Started analysis of 0_2b_S2_R1.fastq.gz
+Started analysis of 0_2b_S2_R2.fastq.gz
+Approx 5% complete for 0_2b_S2_R1.fastq.gz
+Approx 10% complete for 0_2b_S2_R1.fastq.gz
+Approx 5% complete for 0_2b_S2_R2.fastq.gz
+Approx 15% complete for 0_2b_S2_R1.fastq.gz
+Approx 20% complete for 0_2b_S2_R1.fastq.gz
+Approx 25% complete for 0_2b_S2_R1.fastq.gz
+Approx 10% complete for 0_2b_S2_R2.fastq.gz
+Approx 30% complete for 0_2b_S2_R1.fastq.gz
+Approx 35% complete for 0_2b_S2_R1.fastq.gz
+Approx 15% complete for 0_2b_S2_R2.fastq.gz
+Approx 40% complete for 0_2b_S2_R1.fastq.gz
+Approx 45% complete for 0_2b_S2_R1.fastq.gz
+Approx 50% complete for 0_2b_S2_R1.fastq.gz
+Approx 20% complete for 0_2b_S2_R2.fastq.gz
+Approx 55% complete for 0_2b_S2_R1.fastq.gz
+Approx 60% complete for 0_2b_S2_R1.fastq.gz
+Approx 25% complete for 0_2b_S2_R2.fastq.gz
+Approx 65% complete for 0_2b_S2_R1.fastq.gz
+Approx 70% complete for 0_2b_S2_R1.fastq.gz
+Approx 75% complete for 0_2b_S2_R1.fastq.gz
+Approx 30% complete for 0_2b_S2_R2.fastq.gz
+Approx 80% complete for 0_2b_S2_R1.fastq.gz
+Approx 85% complete for 0_2b_S2_R1.fastq.gz
+Approx 35% complete for 0_2b_S2_R2.fastq.gz
+Approx 90% complete for 0_2b_S2_R1.fastq.gz
+Approx 95% complete for 0_2b_S2_R1.fastq.gz
+Analysis complete for 0_2b_S2_R1.fastq.gz
+Approx 40% complete for 0_2b_S2_R2.fastq.gz
+Approx 45% complete for 0_2b_S2_R2.fastq.gz
+Approx 50% complete for 0_2b_S2_R2.fastq.gz
+Approx 55% complete for 0_2b_S2_R2.fastq.gz
+Approx 60% complete for 0_2b_S2_R2.fastq.gz
+Approx 65% complete for 0_2b_S2_R2.fastq.gz
+Approx 70% complete for 0_2b_S2_R2.fastq.gz
+Approx 75% complete for 0_2b_S2_R2.fastq.gz
+Approx 80% complete for 0_2b_S2_R2.fastq.gz
+Approx 85% complete for 0_2b_S2_R2.fastq.gz
+Approx 90% complete for 0_2b_S2_R2.fastq.gz
+Approx 95% complete for 0_2b_S2_R2.fastq.gz
+Analysis complete for 0_2b_S2_R2.fastq.gz
+[Sat Dec 30 20:52:54 2017] Finished job 5.
+[Sat Dec 30 20:52:54 2017] 10 of 11 steps (91%) done
+[Sat Dec 30 20:52:54 2017] 
+[Sat Dec 30 20:52:54 2017] localrule all:
+    input: logs/0_2a_S1_R1_fastqc.html, logs/0_1b_S2_R1_fastqc.html, logs/0_2b_S2_R1_fastqc.html, logs/0_1a_S1_R1_fastqc.html, logs/mPFC2_S2_R1_fastqc.html, logs/PFC1_S2_R1_fastqc.html, logs/PFC3_S2_R1_fastqc.html, logs/HP3_S1_R1_fastqc.html, logs/HP1_S1_R1_fastqc.html, logs/mHP2_S1_R1_fastqc.html
+    jobid: 0
+[Sat Dec 30 20:52:54 2017] 
+[Sat Dec 30 20:52:54 2017] Finished job 0.
+[Sat Dec 30 20:52:54 2017] 11 of 11 steps (100%) done
+
+Attaching package: ‘plyr’
+
+The following objects are masked from ‘package:reshape’:
+
+    rename, round_any
+
+Error in file(file.conn, open = "r") : cannot open the connection
+In addition: Warning message:
+In file(file.conn, open = "r") :
+  cannot open file '/cluster/scratch/mholub/logs/0_1a_S1._STARgenome/fastqc_data.txt': No such file or directory
+Execution halted
+Mode is fastqc.
+Running fastqc
+Traceback (most recent call last):
+  File "/cluster/home/mholub/python/bin/dropSeqPipe", line 11, in <module>
+    load_entry_point('dropSeqPipe==0.23a0', 'console_scripts', 'dropSeqPipe')()
+  File "/cluster/home/mholub/python/lib64/python3.6/site-packages/dropSeqPipe/__main__.py", line 114, in main
+    shell(fastqc_summary)
+  File "/cluster/apps/python/3.6.0/x86_64/lib64/python3.6/site-packages/snakemake/shell.py", line 88, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'Rscript /cluster/home/mholub/python/lib64/python3.6/site-packages/dropSeqPipe/Rscripts/fastqc.R /cluster/scratch/mholub' returned non-zero exit status 1.

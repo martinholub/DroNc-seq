@@ -1,0 +1,10 @@
+pics
+*.tar.gz
+*.bib
+*.Rhistory
+*~
+
+#Whitelist
+!project/*.Rmd
+!project/*.R
+

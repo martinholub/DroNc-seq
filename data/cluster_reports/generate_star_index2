@@ -1,0 +1,59 @@
+Sender: LSF System <lsfadmin@eu-c7-018-14>
+Subject: Job 54954244: <index> in cluster <euler> Done
+
+Job <index> was submitted from host <eu-login-01> by user <mholub> in cluster <euler> at Thu Dec 21 21:04:20 2017.
+Job was executed on host(s) <8*eu-c7-018-14>, in queue <bigmem.4h>, as user <mholub> in cluster <euler> at Thu Dec 21 21:04:57 2017.
+</cluster/home/mholub> was used as the home directory.
+</cluster/home/mholub> was used as the working directory.
+Started at Thu Dec 21 21:04:57 2017.
+Terminated at Thu Dec 21 21:45:15 2017.
+Results reported at Thu Dec 21 21:45:15 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/usr/bin/env bash
+genome_dir="/cluster/scratch/mholub/reference/mm10/STAR_index"
+genome_fasta="/cluster/scratch/mholub/reference/mm10/mm10.fasta"
+genome_gtf="/cluster/scratch/mholub/reference/mm10/mm10.gtf"
+read_length=50
+
+echo "'STAR version:\n'"
+STAR --version
+STAR --runMode genomeGenerate --runThreadN 8 --genomeDir $genome_dir \
+--genomeFastaFiles $genome_fasta --sjdbGTFfile $genome_gtf --sjdbOverhang $read_length
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   7624.14 sec.
+    Max Memory :                                 57912 MB
+    Average Memory :                             30019.43 MB
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               7624.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                12
+    Run time :                                   2427 sec.
+    Turnaround time :                            2455 sec.
+
+The output (if any) follows:
+
+'STAR version:\n'
+STAR_2.4.2a
+Dec 21 21:04:59 ..... Started STAR run
+Dec 21 21:04:59 ... Starting to generate Genome files
+Dec 21 21:10:54 ... starting to sort  Suffix Array. This may take a long time...
+Dec 21 21:11:10 ... sorting Suffix Array chunks and saving them to disk...
+Dec 21 21:24:17 ... loading chunks from disk, packing SA...
+Dec 21 21:25:40 ... Finished generating suffix array
+Dec 21 21:25:40 ... starting to generate Suffix Array index...
+Dec 21 21:40:39 ..... Processing annotations GTF
+Dec 21 21:41:17 ..... Inserting junctions into the genome indices
+Dec 21 21:43:22 ... writing Genome to disk ...
+Dec 21 21:43:32 ... writing Suffix Array to disk ...
+Dec 21 21:45:07 ... writing SAindex to disk
+Dec 21 21:45:14 ..... Finished successfully

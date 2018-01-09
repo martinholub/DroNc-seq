@@ -1,0 +1,80 @@
+Sender: LSF System <lsfadmin@eu-c7-015-03>
+Subject: Job 55198652: <plots> in cluster <euler> Done
+
+Job <plots> was submitted from host <eu-login-08> by user <mholub> in cluster <euler> at Sun Dec 31 07:25:22 2017.
+Job was executed on host(s) <8*eu-c7-015-03>, in queue <bigmem.24h>, as user <mholub> in cluster <euler> at Sun Dec 31 07:25:57 2017.
+</cluster/home/mholub> was used as the home directory.
+</cluster/home/mholub> was used as the working directory.
+Started at Sun Dec 31 07:25:57 2017.
+Terminated at Sun Dec 31 07:35:13 2017.
+Results reported at Sun Dec 31 07:35:13 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/usr/bin/env bash
+export _JAVA_OPTIONS="-XX:ParallelGCThreads=8"
+/cluster/home/mholub/python/bin/dropSeqPipe -f /cluster/scratch/mholub \
+-c /cluster/home/mholub/local.yaml \
+-m generate-plots --rerun
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   539.48 sec.
+    Max Memory :                                 924 MB
+    Average Memory :                             395.42 MB
+    Total Requested Memory :                     131072.00 MB
+    Delta Memory :                               130148.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                7
+    Run time :                                   562 sec.
+    Turnaround time :                            591 sec.
+
+The output (if any) follows:
+
+Warning messages:
+1: Removed 2640545 rows containing missing values (geom_point). 
+2: Removed 1211140 rows containing missing values (geom_point). 
+3: Removed 1019488 rows containing missing values (geom_point). 
+4: Removed 1188161 rows containing missing values (geom_point). 
+5: Removed 1590822 rows containing missing values (geom_point). 
+6: Removed 1437337 rows containing missing values (geom_point). 
+7: Removed 1490650 rows containing missing values (geom_point). 
+8: Removed 1484794 rows containing missing values (geom_point). 
+9: Removed 1450395 rows containing missing values (geom_point). 
+10: Removed 1597547 rows containing missing values (geom_point). 
+Loading required package: magrittr
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess'
+[INFO   ]         multiqc : This is MultiQC v1.3
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching '/cluster/scratch/mholub/logs'
+[INFO   ]         multiqc : Searching '/cluster/scratch/mholub/summary'
+Searching 684 files..
+[INFO   ]            star : Found 20 reports
+[INFO   ]          fastqc : Found 20 reports
+[INFO   ]         multiqc : Compressing plot data
+[WARNING]         multiqc : Deleting    : ../../scratch/mholub/multiqc_report.html   (-f was specified)
+[WARNING]         multiqc : Deleting    : ../../scratch/mholub/multiqc_data   (-f was specified)
+[INFO   ]         multiqc : Report      : ../../scratch/mholub/multiqc_report.html
+[INFO   ]         multiqc : Data        : ../../scratch/mholub/multiqc_data
+[INFO   ]         multiqc : MultiQC complete
+Mode is generate-plots
+Plotting knee plots
+Plotting base stats
+Generating multiqc report
+Pipeline finished

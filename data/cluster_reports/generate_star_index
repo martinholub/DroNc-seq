@@ -1,0 +1,59 @@
+Sender: LSF System <lsfadmin@eu-c7-055-15>
+Subject: Job 54862364: <#!/usr/bin/env bash;genome_dir="/cluster/scratch/mholub/reference/mm10_index2";genome_fasta="/cluster/scratch/mholub/reference/mm10/mm10.fasta";genome_gtf="/cluster/scratch/mholub/reference/mm10/mm10.gtf";read_length=63; echo "'STAR version:\n'";STAR --version;STAR --runMode genomeGenerate --runThreadN 8 --genomeDir $genome_dir \;--genomeFastaFiles $genome_fasta --sjdbGTFfile $genome_gtf --sjdbOverhang $read_length> in cluster <euler> Done
+
+Job <#!/usr/bin/env bash;genome_dir="/cluster/scratch/mholub/reference/mm10_index2";genome_fasta="/cluster/scratch/mholub/reference/mm10/mm10.fasta";genome_gtf="/cluster/scratch/mholub/reference/mm10/mm10.gtf";read_length=63; echo "'STAR version:\n'";STAR --version;STAR --runMode genomeGenerate --runThreadN 8 --genomeDir $genome_dir \;--genomeFastaFiles $genome_fasta --sjdbGTFfile $genome_gtf --sjdbOverhang $read_length> was submitted from host <eu-login-07> by user <mholub> in cluster <euler> at Tue Dec 19 22:28:51 2017.
+Job was executed on host(s) <8*eu-c7-055-15>, in queue <normal.4h>, as user <mholub> in cluster <euler> at Tue Dec 19 22:30:09 2017.
+</cluster/home/mholub> was used as the home directory.
+</cluster/home/mholub> was used as the working directory.
+Started at Tue Dec 19 22:30:09 2017.
+Terminated at Tue Dec 19 23:07:41 2017.
+Results reported at Tue Dec 19 23:07:41 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/usr/bin/env bash
+genome_dir="/cluster/scratch/mholub/reference/mm10_index2"
+genome_fasta="/cluster/scratch/mholub/reference/mm10/mm10.fasta"
+genome_gtf="/cluster/scratch/mholub/reference/mm10/mm10.gtf"
+read_length=63
+
+echo "'STAR version:\n'"
+STAR --version
+STAR --runMode genomeGenerate --runThreadN 8 --genomeDir $genome_dir \
+--genomeFastaFiles $genome_fasta --sjdbGTFfile $genome_gtf --sjdbOverhang $read_length
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   7015.83 sec.
+    Max Memory :                                 58170 MB
+    Average Memory :                             29754.06 MB
+    Total Requested Memory :                     32768.00 MB
+    Delta Memory :                               -25402.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                12
+    Run time :                                   2256 sec.
+    Turnaround time :                            2330 sec.
+
+The output (if any) follows:
+
+'STAR version:\n'
+STAR_2.4.2a
+Dec 19 22:30:11 ..... Started STAR run
+Dec 19 22:30:11 ... Starting to generate Genome files
+Dec 19 22:35:50 ... starting to sort  Suffix Array. This may take a long time...
+Dec 19 22:36:04 ... sorting Suffix Array chunks and saving them to disk...
+Dec 19 22:48:02 ... loading chunks from disk, packing SA...
+Dec 19 22:49:18 ... Finished generating suffix array
+Dec 19 22:49:18 ... starting to generate Suffix Array index...
+Dec 19 23:02:43 ..... Processing annotations GTF
+Dec 19 23:03:24 ..... Inserting junctions into the genome indices
+Dec 19 23:05:31 ... writing Genome to disk ...
+Dec 19 23:05:47 ... writing Suffix Array to disk ...
+Dec 19 23:07:31 ... writing SAindex to disk
+Dec 19 23:07:40 ..... Finished successfully

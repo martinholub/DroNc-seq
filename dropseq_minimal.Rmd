@@ -1,0 +1,295 @@
+---
+title: "Drop-seq Analysis - Minimal Example"
+author: "Martin Holub"
+date: "January 9, 2018"
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7
+    highlight: pygments
+    number_sections: yes
+    theme: journal
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7
+    highlight: pygments
+    number_sections: yes
+header-includes: \usepackage[ singlelinecheck=false, justification=centering ]{caption}
+bibliography: bibliography.bib
+urlcolor: blue
+---
+
+``` {r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+#knitr::opts_chunk$set(root.dir = "../git/sta426/project")
+#knitr::opts_knit$set(root.dir = "../git/sta426/project")
+```
+
+# Minimal Example
+
+## Workflow - Additional Processing
+
+*This is minimal example of the workflow. Only small subset of data is used to to speed up computatins. The necessary files are described in readme. Please refer to the PDF document for full analysis.*
+
+From the information available in the paper, we deduce that authors used in-house scripts for the most part of the analysis of the data, including the parts done in R. Availability of these is limited to a previous publication [@Shekhar2016], as that one is accompanied by a [github repository](https://github.com/broadinstitute/BipolarCell2016) with example of analysis. It is unclear however, to which extent was the code used for the analysis in this paper.
+
+Other part of the analysis was done using [Seurat](http://satijalab.org/seurat/), an R package for exploration and analysis of single cell RNA-seq data. Importantly, this package already incorporates most of the functionality implemented in the code from the referred publication. It is unclear however, to which extent are corresponding functions equivalent in terms of their results.
+
+To honor reproducibility and also because some parts of the analysis that we aim to reproduce are available only in Seurat, we opt for this package as our workhorse for following steps.
+
+### Load, Scale and Normalize & Remove genes with low expression
+
+Setup basepath:
+
+``` {r basepath,  eval = TRUE}
+basepath <- getwd()
+```
+
+Get paths to files and names of all samples:
+
+``` {r filePaths, eval = TRUE}
+mouse.datafiles <- list.files(path = file.path(basepath, 'summary~'),
+                              pattern = "*_expression_matrix.txt$", full.names = TRUE)
+mouse.annofiles <- list.files(path = file.path(basepath, 'summary~'),
+                              pattern = "*_dge.summary.txt$", full.names = TRUE)
+mouse.umigenefiles <- list.files(path = file.path(basepath, 'logs~'),
+                                 pattern = "*_umi_per_gene.tsv$", full.names = TRUE)
+mouse <- list()
+mouse$samples <- gsub("(.*)_S[12]_dge.summary.txt$", "\\1", basename(mouse.annofiles))
+```
+
+**Construct Seurat Object while retaining sample identity** 
+
+To quote the paper:
+"The DGE matrix was scaled by total UMI counts, multiplied by the mean number of transcripts (calculated for each data set separately), and the values were log transformed".
+
+From observation and from available documentation, we infer that the scaling by total number of UMI counts happens implicitly and we thus need to specify only the latter two steps. Additionally we filter out genes with low  expression.
+
+Quoting: 
+"A gene is considered detected in a cell if it has at least two unique UMIs (transcripts) associated with it. For each analysis, genes were removed that were detected in less than 10 nuclei."
+
+``` {r constructSeurat, eval = TRUE}
+mean_counts <- vector(mode = "list", length = length(mouse$samples))
+for (i in 1:length(mouse$samples)){
+  # Read data from files
+  counts <- read.table(mouse.datafiles[i] , sep = "\t", header = TRUE)
+  anno <- read.table(mouse.annofiles[i] , sep = "\t", header = TRUE)
+  umi_per_gene <-  read.table(mouse.umigenefiles[i] , sep = "\t", header = TRUE)
+  
+  # Agregate number of observations, unique umis, and cell barcodes on gene names
+  #num_obs <- aggregate(Num_Obs ~ Gene, data = umi_per_gene, sum)
+  num_umis <- aggregate(Molecular_Barcode ~ Gene, data = umi_per_gene, length)
+  num_cells <- aggregate(Cell.Barcode ~ Gene, data = umi_per_gene, length)
+  
+  # Prepare TF filter
+  idx <- setNames((num_umis$Molecular_Barcode > 2) & (num_cells$Cell.Barcode > 10),
+                  levels(num_cells$Gene))
+  num_umis <- num_umis$Molecular_Barcode[idx]
+  idx_match <- idx[match(counts[ , 1], names(idx))]
+  idx_match[is.na(idx_match)] <- FALSE
+  
+  # Move cell barcodes and gene names out of matrix
+  # Assure unqiue barcodes across samples by prepending sample name
+  rownames(counts) <- counts[ , 1]
+  counts <- counts[, -1]
+  colnames(counts) <- paste0(mouse$samples[i], ".", colnames(counts))
+  counts <- counts[idx_match, ]
+  
+  rownames(anno) <- paste0(mouse$samples[i], ".", anno[ , 1])
+  anno <- anno[ ,-1]
+  anno <- anno[match(colnames(counts), rownames(anno)), ]
+  
+  # Get mean count
+  mean_counts[i] <- mean(anno$NUM_TRANSCRIPTS, na.rm = TRUE)
+  # Get sparse representation of the data
+  sparse_counts <- Matrix::Matrix(data.matrix(counts), sparse = TRUE)
+  
+  if (i == 1) {
+    # initialize Seurat
+    sObj <- Seurat::CreateSeuratObject(raw.data = sparse_counts, project = 'DroNcSeq',
+                                       names.delim = ".",
+                                       normalization.method = NULL,
+                                       min.cells = 10, min.genes = 200)
+    sObj <- Seurat::AddMetaData(sObj, anno, colnames(anno))
+    sObj@meta.data$orig.ident <- factor(mouse$samples[i])
+    sObj <- Seurat::NormalizeData(object = sObj, normalization.method = "LogNormalize",
+                                  scale.factor = mean_counts[[i]])
+    
+  } else {
+    # merge Seurat
+    sObj_temp <- Seurat::CreateSeuratObject(raw.data = sparse_counts, 
+                                            project = 'DroNcSeq',
+                                            names.delim = ".",
+                                            normalization.method = NULL,
+                                            min.cells = 10, min.genes = 200)
+    sObj <- Seurat::AddMetaData(sObj, anno, colnames(anno))
+    sObj_temp@meta.data$orig.ident <- factor(mouse$samples[i])
+    sObj_temp <- Seurat::NormalizeData(object = sObj_temp, 
+                                       normalization.method = "LogNormalize",
+                                       scale.factor = mean_counts[[i]])
+    
+    sObj <- Seurat::MergeSeurat(sObj, sObj_temp,
+                                min.cells = 10, min.genes = 200,
+                                do.normalize = TRUE)
+    remove(sObj_temp)
+  }
+  
+  sprintf("Run %d with mean UMI count %.3f finished.", i, mean_counts[[i]])
+}
+mouse$sObj <- sObj
+remove(sObj, counts, sparse_counts, anno, i, num_cells, 
+       umi_per_gene, idx, idx_match)
+```
+
+Do quick sanity check:
+
+``` {r check_sample, eval = TRUE}
+library(Matrix)
+idxer <- sample(nrow(mouse$sObj@data), 7)
+mouse$sObj@data[idxer, 1:7]
+mouse$sObj@raw.data[idxer, 1:7]
+```
+Violin plot:
+
+``` {r violinPlot, eval = TRUE}
+Seurat::VlnPlot(object = mouse$sObj, features.plot = c("nGene", "nUMI"),
+                nCol = 2, group.by = "orig.ident", y.log = TRUE)
+```
+Gene Plot:
+
+``` {r GenePlot, eval = TRUE}
+Seurat::GenePlot(object = mouse$sObj, gene1 = "nUMI", gene2 = "nGene")
+```
+
+
+### Regress Out
+
+To quote authors of the paper: "To reduce the effects of library quality and complexity on cluster identity, a linear model was used to regress out effects of the number of transcripts and genes detected per nucleus (using the 'RegressOut' function in the Seurat software package)."
+
+To quote Seurat: "[T]he `RegressOut` function has been deprecated, and replaced with the vars.to.regress argument in `ScaleData`."
+
+In brevity, we attempt to "regress-out" uninteresting sources of variation , including technical noise, batch effects, cell-cycle stage. This is done by learning a linear model to predict gene expression based on user-defined variables. 
+
+``` {r regress_out, eval = TRUE}
+mouse$sObj <- Seurat::ScaleData(mouse$sObj, vars.to.regress = c('nGene', 'nUMI'), 
+                                do.scale = FALSE, do.center = FALSE)
+```
+
+
+### Find variable genes
+
+Quoting: "To select highly variable genes, we fit a relationship between mean counts and coefficient of variation using a gamma distribution on the data from all of the genes and ranked genes by the extent of excess variation as a function of their mean expression (using a threshold of at least 0.2  difference in the coefficient of variation between the empirical and the expected and a minimal mean transcript count of 0.005)."
+
+The above discription unfortunately does not allow us to unambigiously identify the exact procedure for discriminating highly variable genes. However, we note that Seurat features a function that can be used for this purpose. We set the paremetrs mirroring the ones used in the paper and also based on [other available analyses](https://hemberg-lab.github.io/scRNA.seq.course/seurat-chapter.html). 
+
+Note that LogVMR is logarithm of variance to mean ratio, which is similar to the logarithm of coefficient of variation and note also that we define the thresholds in non-log space.
+
+``` {r variable_genes, eval = TRUE}
+mouse$sObj <- Seurat::FindVariableGenes(mouse$sObj, mean.function = Seurat::ExpMean, 
+                                        dispersion.function = Seurat::LogVMR, 
+                                        x.low.cutoff = 0.005,  y.cutoff = sqrt(0.2),
+                                        num.bin = 50)
+```
+
+### Dimensionality reduction - PCA
+
+Next, we reduce the dimensionality of the data with PCA. The dimensionality of the reduced representation is arbitrary but should be sufficient to identify significant PCs in the following step.
+
+Quoting the paper:
+"We used a DGE matrix consisting only of variable genes as defined above, scaled and log-transformed, and then reduced its dimensions with PCA."
+
+``` {r PCA_extract, eval = TRUE}
+mouse$sObj <- Seurat::RunPCA(mouse$sObj, pc.genes = mouse$sObj@var.genes,
+                             pcs.compute = 20, genes.print = 5)
+Seurat::PrintPCAParams(mouse$sObj)
+```
+
+Quoting: "We [...] chose the most significant principal components (or PCs) based on the largest eigen value gap ...".
+
+This can be done by looking for PCs that have high enrichment at low p-values (dashed line represents uniform distribution).
+
+``` {r pickPCs, eval = TRUE}
+mouse$sObj <- Seurat::JackStraw(mouse$sObj, num.pc = 20,
+                                num.replicate = 100, do.print = TRUE)
+```
+
+``` {r plotjackstraw, eval = TRUE}
+Seurat::JackStrawPlot(mouse$sObj, PCs = 1: 9, nCol = 3)
+```
+
+We can also use more approximate technique and look at the explained variance plot:
+
+``` {r explainedVariance, eval = TRUE}
+Seurat::PCElbowPlot(mouse$sObj)
+```
+
+From the plots, it looks like 5 may be appropriate number of PCs to retain.
+
+### Dimensionality Reduction - tSNE
+
+Next we compute 2D embedding using tSNE. 
+
+Quoting:  "We generated a 2D nonlinear embedding  of the nuclei profiles using tSNE. The scores along the top significant PCs estimated above were used as input to the algorithm ([...] with a maximum of 2,000 iteration [..] and setting the perplexity parameter to 100.)"
+
+
+``` {r RunTSNE, eval = TRUE}
+
+mouse$sObj <- Seurat::RunTSNE(mouse$sObj, reduction.use = "pca", dims.use = 1:5,
+                              dim.embed = 2, perplexity = 100, max_iter = 2000)
+
+# mouse$tsne <- Rtsne::Rtsne((mouse$sObj@dr$pca@cell.embeddings[ ,grep("PC[1-7]$",
+#                             colnames(mouse$sObj@dr$pca@cell.embeddings))]), 
+#                            pca = FALSE, perplexity = 100, max_iter = 2000, dims = 2)
+Seurat::PrintTSNEParams(mouse$sObj)
+```
+
+
+### Visualization and comparison
+
+Finally, we plot the data in the space of 2D tSNE embedding. We also color the cells by the cell-type assignment as reported in the data made available with the publication. This assignment was obtained by graph-based clustering algorithm. Briefly, the cells were embedded in K-nearest neighbor (KNN) graph based on the euclidean distance in PCA space, with edges drawn between cells with similar gene expression patterns. The algorithm partitioned this graph into highly interconnected 'quasi-cliques' or 'communities'.
+
+
+``` {r load_cluster, eval = TRUE}
+mouse.clusterfile <- file.path(basepath, 'data~/Mouse_Meta_Data_with_cluster.txt')
+mouse$clusters <- read.table(mouse.clusterfile , sep = "\t", header = TRUE)
+mouse$clusters <- mouse$clusters[-1, ]
+mouse$clusters$NAME <- gsub("_", ".", mouse$clusters$NAME)
+mouse$clusters$NAME <- gsub("-", "_", mouse$clusters$NAME)
+unassigned <- grepl("Unclassified[0-9]", mouse$clusters$Cluster)
+mouse$clusters$Cluster[unassigned] <- "Unclassified1"
+mouse$clusters$ClusterID[unassigned] <- 
+  min(as.integer(unique(mouse$clusters$ClusterID[grepl("Unclassified[0-9]",
+                                                       mouse$clusters$Cluster)])))
+
+mouse$clusters <- mouse$clusters[match(rownames(mouse$sObj@meta.data),
+                                       mouse$clusters$NAME), ]
+levels(mouse$clusters$Cluster) <- c(levels(mouse$clusters$Cluster), "unkn.") 
+mouse$clusters$Cluster[is.na(mouse$clusters$ClusterID)] <- "unkn."
+new_ident <- setNames(mouse$clusters$Cluster, names(mouse$sObj@ident))
+mouse$sObj@ident <- new_ident
+
+```
+
+``` {r plotTSNE, eval = TRUE}
+Seurat::TSNEPlot(mouse$sObj, 
+                 cells.use = mouse$sObj@cell.names[!is.na(mouse$clusters$ClusterID) &
+                                                     mouse$sObj@ident != "Unclassified1"],
+                 do.label = FALSE)
+```
+
+Overall, we see that the some cells represented by our data form clusters according to the cell-type assignment obtained in the publication. This is however not generally true for all cells.
+
+# Conclusion 
+
+This concludes minimal example.
+
+## Sessioninfo {-}
+``` {r sessioninfo}
+sessionInfo()
+```
+
+# References
